@@ -63,5 +63,6 @@ int exercise116(int x);
 double exercise117(int n,double x);
 vector<int> exercise119(int n);
 vector<int> exercise120(int n);
+vector<int> exercise121(int n);
 
 

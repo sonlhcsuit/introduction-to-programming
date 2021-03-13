@@ -567,8 +567,16 @@ vector<int> exercise119(int n) {
     }
     return prime;
 }
-
 vector<int> exercise120(int n) {
+    int i =2;
+    vector<int> squares;
+    while(i*i < n){
+        squares.push_back(i*i);
+        i = i+1;
+    }
+    return squares;
+}
+vector<int> exercise121(int n) {
     vector<int> narcissistic;
     for (int i = 1; i < n; i++) {
         int no_digits = 0;
