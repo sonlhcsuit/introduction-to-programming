@@ -6,6 +6,7 @@
 #include <string>
 #include "../section-1/section-1.h"
 
+
 using namespace std;
 
 int exercise082(int a, int b, int c) {
@@ -368,21 +369,160 @@ int exercise104(int day, int month, int year) {
         case 1:
             ith = ith + 31;
     }
-    if ((isLeap && month > 2) ) {
+    if ((isLeap && month > 2)) {
         ith = ith + 1;
     }
 
     return ith + day;
 }
 
-string exercise105(short number);
+string unit_speak(short unit) {
+    switch (unit) {
+        case 1:
+            return "one";
+        case 2:
+            return "two";
+        case 3:
+            return "three";
+        case 4:
+            return "four";
+        case 5:
+            return "five";
+        case 6:
+            return "six";
+        case 7:
+            return "seven";
+        case 8:
+            return "eight";
+        case 9:
+            return "nine";
+        default:
+            return "";
 
-string exercise106(int number);
+    }
+}
 
-double exercise107(int n, double x);
+string teen_speak(short teen) {
+    switch (teen) {
+        case 10:
+            return "ten";
+        case 11:
+            return "eleven";
+        case 12:
+            return "twelve";
+        case 13:
+            return "thirteen";
+        case 14:
+            return "fourteen";
+        case 15:
+            return "fifteen";
+        case 16:
+            return "sixteen";
+        case 17:
+            return "seventeen";
+        case 18:
+            return "eighteen";
+        case 19:
+            return "nineteen";
+        case 20:
+            return "twenty";
+        default:
+            return "";
 
-double exercise108(int x, int y);
+    }
+}
 
-void exercise109(int n);
+string exercise105(short number) {
+    if (number == 0) {
+        return "zero";
+    }
+    if (number > 99) {
+        return "";
+    }
 
-int exercise110();
+    if (number < 10) {
+        return unit_speak(number);
+    }
+    if (number <= 20) {
+        return teen_speak(number);
+    }
+    short ten = number / 10;
+    short unit = number % 10;
+    switch (ten) {
+        case 2:
+            return "twenty " + unit_speak(unit);
+        case 3:
+            return "thirty " + unit_speak(unit);
+        case 4:
+            return "forty " + unit_speak(unit);
+        case 5:
+            return "fifty " + unit_speak(unit);
+        case 6:
+            return "sixty " + unit_speak(unit);
+        case 7:
+            return "seventy " + unit_speak(unit);
+        case 8:
+            return "eighty " + unit_speak(unit);
+        case 9:
+            return "ninety " + unit_speak(unit);
+        default:
+            return "";
+    }
+}
+
+string exercise106(int number) {
+    if (number < 100) {
+        return exercise105(number);
+    }
+    if (number>999){
+        return "";
+    }
+    int hundred = number / 100;
+    int nu = number % 100;
+    return unit_speak(hundred) + " hundred and " + (nu == 0 ? "" : exercise105(nu));
+
+}
+
+double exercise107(int n, double x){
+//    you can use pow built-in function here
+    return pow(x,1.0/n);
+
+//    if you wanna try hard by implement a power function with degree
+//    as real number, you first implement log natural (euler number - e)
+//    function (using Taylor series for implement it). Check google!
+}
+
+double exercise108(int x, int y){
+    return pow(x,y);
+}
+
+void exercise109(int n){
+    for(int i = 1;i<10;i++){
+        string str = to_string(n) + " x " +to_string(i) + " = " + to_string(n*i);
+        cout<<str <<"\n";
+    }
+}
+
+int exercise110(){
+//    simplify by using 20 - 1,2,5
+//    A is number of "1"
+//    B is number of "2"
+//    C is number of "5"
+//    A + 2*B + 5*C = 20;
+//    0<= A <= 20
+//    0<= B <= 10
+//    0<= C <= 5
+//    brute force ->
+    int a,b,c =0;
+    int count = 0;
+    for(a = 0;a <= 20; a++){
+        for(b=0;b<=10;b++){
+            for(c=0;c<=5;c++){
+                if (a + 2*b + 5*c==20){
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
