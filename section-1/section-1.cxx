@@ -1,4 +1,4 @@
-int ex001(int n) {
+int exercise001(int n) {
     int s = 0;
 
     for(int i=0;i<=n;i++){

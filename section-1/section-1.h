@@ -7,4 +7,4 @@
 
 #endif //INTRODUCTION_TO_PROGRAMMING_EX1_H
 
-int ex001(int n);
+int exercise001(int n);

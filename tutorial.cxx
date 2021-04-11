@@ -7,10 +7,10 @@ using namespace std;
 int main(int argc, char **argv) {
     cout << "Hello World\n";
     if (argc == 1) {
-        cout << ex001(stoi(argv[0]));
+        cout << exercise001(stoi(argv[0]));
 
     } else {
-        cout << ex001(10);
+        cout << exercise001(10);
 
     }
     return 1;
