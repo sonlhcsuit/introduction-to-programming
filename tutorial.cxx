@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "section-1/ex1.h"
+#include "section-1/section-1.h"
 
 using namespace std;
 
