@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(introduction_to_programming
         section-1/exercise-001.cxx
-        tutorial.cxx)
+        tutorial.cxx section-1/ex1.h)
