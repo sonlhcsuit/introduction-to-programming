@@ -37,3 +37,5 @@
 
 *.xcodeproj
 build/*
+
+cmake-build-debug/
