@@ -1,4 +1,0 @@
-// the configured options and settings for Tutorial
-#define Itp_VERSION_MAJOR @ITP_VERSION_MAJOR@
-#define Itp_VERSION_MINOR @ITP_VERSION_MINOR@
-#cmakedefine USE_SECTION_ONE
