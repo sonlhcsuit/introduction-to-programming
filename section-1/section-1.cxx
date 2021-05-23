@@ -79,7 +79,7 @@ unsigned long long exercise010(int x, int n) {
     int exponent = n;
 //    in this case, we consider to calculate natural number power
 //    For real number implementation, checkout internet
-    unsigned long long answer = base;
+    unsigned long long answer = 1;
     for (int i = 1; i < exponent+1; ++i) {
         answer = answer*base;
     }
