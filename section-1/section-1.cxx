@@ -1,3 +1,6 @@
+#include <vector>
+using namespace std;
+
 int exercise001(int n) {
     int s = 0;
 
@@ -128,30 +131,76 @@ unsigned long long exercise014(int n, int x) {
     return sum;
 }
 
-long double exercise015(int n, int x) {
+long double exercise015(int n) {
     long double sum = 0;
-    long denominator = 0;
+    double denominator = 1;
     for (int i = 1; i < n + 1; i++) {
+        sum = sum + 1.0 / denominator;
         denominator = denominator + i;
-        sum = sum + 1.0/denominator;
+
     }
     return sum;
 }
 
-long double exercise016(int n, int x) {
+long double exercise016(int n, double x) {
     long double sum = 0;
-    long denominator = 0;
+    double denominator = 1;
+    double x_to_the_i = x;
     for (int i = 1; i < n + 1; i++) {
+        sum = sum + x_to_the_i / denominator;
+
         denominator = denominator + i;
-        sum = sum + 1.0/denominator;
+        x_to_the_i = x_to_the_i * x;
     }
     return sum;
 }
 
-int exercise017(int n);
+long double exercise017(int n, double x) {
+    long double sum = 0;
+    double denominator = 1;
+    double x_to_the_i = x;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sum + x_to_the_i / denominator;
 
-int exercise018(int n);
+        denominator = denominator * i;
+        x_to_the_i = x_to_the_i * x;
+    }
+    return sum;
+}
 
-int exercise019(int n);
+long double exercise018(int n, double x) {
+    long double sum = 1;
+    double denominator = 1;
+    double x_to_the_i = 1;
+    for (int i = 1; i < n + 1; i++) {
+        denominator = denominator * (2 * i) * (2 * i - 1);
+        x_to_the_i = x_to_the_i * x * x;
+        sum = sum + x_to_the_i / denominator;
 
-int exercise020(int n);
+    }
+    return sum;
+}
+
+long double exercise019(int n, double x){
+    long double sum = 1 + x;
+    double denominator = 1;
+    double x_to_the_i = x;
+    for (int i = 1; i < n + 1; i++) {
+        denominator = denominator * (2 * i) * (2 * i + 1);
+        x_to_the_i = x_to_the_i * x * x;
+        sum = sum + x_to_the_i / denominator;
+
+    }
+    return sum;
+}
+
+vector<int> exercise020(int n){
+    vector<int> result;
+    for(int i = 2;i<n+1;i++){
+        if (n%i==0){
+            result.push_back(i);
+        }
+    }
+    return result;
+
+}
