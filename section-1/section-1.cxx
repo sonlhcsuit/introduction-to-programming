@@ -80,14 +80,22 @@ unsigned long long exercise010(int x, int n) {
 //    in this case, we consider to calculate natural number power
 //    For real number implementation, checkout internet
     unsigned long long answer = 1;
-    for (int i = 1; i < exponent+1; ++i) {
-        answer = answer*base;
+    for (int i = 1; i < exponent + 1; ++i) {
+        answer = answer * base;
     }
     return answer;
 }
 
 
-int exercise011(int n);
+unsigned long long exercise011(int n) {
+    unsigned long long sum = 0;
+    long long product = 1;
+    for (int i = 1; i < n + 1; i++) {
+        product = product * i;
+        sum = sum + product * i;
+    }
+    return sum;
+}
 
 int exercise012(int n);
 
