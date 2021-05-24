@@ -92,20 +92,61 @@ unsigned long long exercise011(int n) {
     long long product = 1;
     for (int i = 1; i < n + 1; i++) {
         product = product * i;
-        sum = sum + product * i;
+        sum = sum + product;
     }
     return sum;
 }
 
-int exercise012(int n);
+unsigned long long exercise012(int n, int x) {
+    unsigned long long sum = 0;
+    long long x_to_the_i = x;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sum + x_to_the_i;
 
-int exercise013(int n);
+        x_to_the_i = x_to_the_i * x;
+    }
+    return sum;
+}
 
-int exercise014(int n);
+unsigned long long exercise013(int n, int x) {
+    unsigned long long sum = 0;
+    long long x_to_the_i = x * x;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sum + x_to_the_i;
+        x_to_the_i = x_to_the_i * x * x;
+    }
+    return sum;
+}
 
-int exercise015(int n);
+unsigned long long exercise014(int n, int x) {
+    unsigned long long sum = 0;
+    long long x_to_the_i = x;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sum + x_to_the_i;
+        x_to_the_i = x_to_the_i * x * x;
+    }
+    return sum;
+}
 
-int exercise016(int n);
+long double exercise015(int n, int x) {
+    long double sum = 0;
+    long denominator = 0;
+    for (int i = 1; i < n + 1; i++) {
+        denominator = denominator + i;
+        sum = sum + 1.0/denominator;
+    }
+    return sum;
+}
+
+long double exercise016(int n, int x) {
+    long double sum = 0;
+    long denominator = 0;
+    for (int i = 1; i < n + 1; i++) {
+        denominator = denominator + i;
+        sum = sum + 1.0/denominator;
+    }
+    return sum;
+}
 
 int exercise017(int n);
 
