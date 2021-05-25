@@ -201,9 +201,9 @@ vector<int> exercise020(int n) {
     return result;
 }
 
-long exercise021(int n) {
+int exercise021(int n) {
     long sum = 0;
-    for (int i = 2; i < n + 1; i++) {
+    for (int i = 1; i < n + 1; i++) {
         if (n % i == 0) {
             sum = sum + i;
         }
@@ -279,14 +279,40 @@ int exercise027(int n) {
     return count;
 }
 
-int exercise028(int n){
-
+int exercise028(int n) {
+//    ex 21 calculate sum of divisor (include n)
+    return exercise021(n) - n;
 }
 
-int exercise029(int n){
+int exercise029(int n) {
+//    original version, loop from 1 to n (include n) (last odd divisor is the biggest one)
+//    int max_odd = 1;
+//    for (int i = 1; i < n + 1; i++) {
+//        if (n % i == 0) {
+//            if (i % 2 == 0) {
+//                max_odd = i;
+//            }
+//        }
+//    }
+//    return max_odd;
 
+// inverse version, loop from n to 1 (first odd divisor is the biggest one)
+    int max_odd = n;
+    for (int i = n; n > 0; n--) {
+        if (n % i == 0) {
+            if (i % 2 == 0) {
+                max_odd = i;
+                break;
+            }
+        }
+    }
+    return max_odd;
 }
 
-bool exercise030(int n){
-
+bool exercise030(int n) {
+// perfect number is a number which sum of its divisor equal itself (exclude itself)
+// example is 6
+// sum  of it's divisors : 1 + 2 + 3  (exclude itself)
+// ex21 already calculate sum of divisors (include n) for us. Or better choice is ex28
+    return exercise028(n) == n;
 }

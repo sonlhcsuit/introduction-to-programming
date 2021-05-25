@@ -50,7 +50,7 @@ long double exercise019(int n, double x);
 
 vector<int> exercise020(int n);
 
-long exercise021(int n);
+int exercise021(int n);
 long long exercise022(int n);
 int exercise023(int n);
 vector<int> exercise024(int n);
