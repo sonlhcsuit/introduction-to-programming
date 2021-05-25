@@ -1,4 +1,5 @@
 #include <vector>
+
 using namespace std;
 
 int exercise001(int n) {
@@ -77,8 +78,11 @@ unsigned long long exercise009(int n) {
 
 }
 
-unsigned long long exercise010(int x, int n) {
-    int base = x;
+unsigned long long exercise010(double x, int n) {
+
+    if (x == 1 || x == 0 || n == 1) return x;
+    if (n == 0) return 1;
+    double base = x;
     int exponent = n;
 //    in this case, we consider to calculate natural number power
 //    For real number implementation, checkout internet
@@ -88,7 +92,6 @@ unsigned long long exercise010(int x, int n) {
     }
     return answer;
 }
-
 
 unsigned long long exercise011(int n) {
     unsigned long long sum = 0;
@@ -102,11 +105,10 @@ unsigned long long exercise011(int n) {
 
 unsigned long long exercise012(int n, int x) {
     unsigned long long sum = 0;
-    long long x_to_the_i = x;
+    long long x_to_the_i = 1;
     for (int i = 1; i < n + 1; i++) {
-        sum = sum + x_to_the_i;
-
         x_to_the_i = x_to_the_i * x;
+        sum = sum + x_to_the_i;
     }
     return sum;
 }
@@ -125,32 +127,30 @@ unsigned long long exercise014(int n, int x) {
     unsigned long long sum = 0;
     long long x_to_the_i = x;
     for (int i = 1; i < n + 1; i++) {
-        sum = sum + x_to_the_i;
         x_to_the_i = x_to_the_i * x * x;
+        sum = sum + x_to_the_i;
     }
     return sum;
 }
 
 long double exercise015(int n) {
     long double sum = 0;
-    double denominator = 1;
+    double denominator = 0;
     for (int i = 1; i < n + 1; i++) {
-        sum = sum + 1.0 / denominator;
         denominator = denominator + i;
-
+        sum = sum + 1.0 / denominator;
     }
     return sum;
 }
 
 long double exercise016(int n, double x) {
     long double sum = 0;
-    double denominator = 1;
-    double x_to_the_i = x;
+    double denominator = 0;
+    double x_to_the_i = 1;
     for (int i = 1; i < n + 1; i++) {
-        sum = sum + x_to_the_i / denominator;
-
         denominator = denominator + i;
         x_to_the_i = x_to_the_i * x;
+        sum = sum + x_to_the_i / denominator;
     }
     return sum;
 }
@@ -158,12 +158,11 @@ long double exercise016(int n, double x) {
 long double exercise017(int n, double x) {
     long double sum = 0;
     double denominator = 1;
-    double x_to_the_i = x;
+    double x_to_the_i = 1;
     for (int i = 1; i < n + 1; i++) {
-        sum = sum + x_to_the_i / denominator;
-
         denominator = denominator * i;
         x_to_the_i = x_to_the_i * x;
+        sum = sum + x_to_the_i / denominator;
     }
     return sum;
 }
@@ -176,12 +175,11 @@ long double exercise018(int n, double x) {
         denominator = denominator * (2 * i) * (2 * i - 1);
         x_to_the_i = x_to_the_i * x * x;
         sum = sum + x_to_the_i / denominator;
-
     }
     return sum;
 }
 
-long double exercise019(int n, double x){
+long double exercise019(int n, double x) {
     long double sum = 1 + x;
     double denominator = 1;
     double x_to_the_i = x;
@@ -189,18 +187,106 @@ long double exercise019(int n, double x){
         denominator = denominator * (2 * i) * (2 * i + 1);
         x_to_the_i = x_to_the_i * x * x;
         sum = sum + x_to_the_i / denominator;
-
     }
     return sum;
 }
 
-vector<int> exercise020(int n){
+vector<int> exercise020(int n) {
     vector<int> result;
-    for(int i = 2;i<n+1;i++){
-        if (n%i==0){
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
             result.push_back(i);
         }
     }
     return result;
+}
+
+long exercise021(int n) {
+    long sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            sum = sum + i;
+        }
+    }
+    return sum;
+}
+
+long long exercise022(int n) {
+    long long product = 1;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            product = product * i;
+        }
+    }
+    return product;
+}
+
+int exercise023(int n) {
+    int count = 0;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+vector<int> exercise024(int n) {
+    vector<int> result;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            if (i % 2 == 1) {
+                result.push_back(i);
+            }
+        }
+    }
+    return result;
+}
+
+long exercise025(int n) {
+    long sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            if (i % 2 == 0) {
+                sum = sum + i;
+            }
+        }
+    }
+    return sum;
+}
+
+long long exercise026(int n) {
+    long long product = 1;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            if (i % 2 == 1) {
+                product = product * i;
+            }
+        }
+    }
+    return product;
+}
+
+int exercise027(int n) {
+    int count = 0;
+    for (int i = 2; i < n + 1; i++) {
+        if (n % i == 0) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+int exercise028(int n){
+
+}
+
+int exercise029(int n){
+
+}
+
+bool exercise030(int n){
 
 }

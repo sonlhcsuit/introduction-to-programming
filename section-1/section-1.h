@@ -6,8 +6,8 @@
 #define INTRODUCTION_TO_PROGRAMMING_EX1_H
 
 #endif //INTRODUCTION_TO_PROGRAMMING_EX1_H
-
 #include <vector>
+
 using namespace std;
 
 int exercise001(int n);
@@ -28,7 +28,7 @@ double exercise008(int n);
 
 unsigned long long exercise009(int n);
 
-unsigned long long exercise010(int x, int n);
+unsigned long long exercise010(double x, int n);
 
 unsigned long long exercise011(int n);
 
@@ -49,3 +49,15 @@ long double exercise018(int n, double x);
 long double exercise019(int n, double x);
 
 vector<int> exercise020(int n);
+
+long exercise021(int n);
+long long exercise022(int n);
+int exercise023(int n);
+vector<int> exercise024(int n);
+long exercise025(int n);
+long long exercise026(int n);
+int exercise027(int n);
+int exercise028(int n);
+int exercise029(int n);
+bool exercise030(int n);
+
