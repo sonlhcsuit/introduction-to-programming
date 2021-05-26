@@ -316,3 +316,5 @@ bool exercise030(int n) {
 // ex21 already calculate sum of divisors (include n) for us. Or better choice is ex28
     return exercise028(n) == n;
 }
+
+
