@@ -1,6 +1,7 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+
 using namespace std;
 
 int exercise001(int n) {
@@ -395,33 +396,34 @@ long double exercise039(int n) {
     long double sum = 0;
     int factorial = 1;
     for (int i = i; i < n + 1; i++) {
-        factorial = factorial*i;
+        factorial = factorial * i;
         sum = pow(sum + factorial, 1.0 / (i + 1));
     }
     return sum;
 }
 
-long double exercise040(int n,double x) {
+long double exercise040(int n, double x) {
 //    nth root of x equals x to the 1/n
 //    instead of calculating nth root of x, we calculate x to the 1/n
     long double sum = 0;
     long exponent = 1;
     for (int i = 2; i < n + 1; i++) {
-        exponent = exponent*x;
+        exponent = exponent * x;
         sum = sqrt(sum + exponent);
     }
     return sum;
 }
 
-long double exercise041(int n){
-    long double sum=0;
+long double exercise041(int n) {
+    long double sum = 0;
 
-    for(int i =1;i<n+1;i++){
-        sum = 1/(sum + 1);
+    for (int i = 1; i < n + 1; i++) {
+        sum = 1 / (sum + 1);
     }
     return sum;
 }
-int exercise042(int n){
+
+int exercise042(int n) {
 //    so easily to recognize that S(k) is
 //    Arithmetic progression (as know as "Cap so cong") with
 //    a_1 (first term) : 1
@@ -432,16 +434,76 @@ int exercise042(int n){
 //    In conclusion, we just need to solve this inequality:
 //    S(k) < n
 //    After applying a lot transformation on this inequality, you can get
-//    k^2 + k < 2n
+//    k^2 + k < 2n (actual form is k^2 - (2*a_1 -d)*k < 2*n, but d & a_1 is 1  )
 //    using approximation here!
 //    However, you can do a loop!
 
-    int k = (int) sqrt(2*n) - 1;
+    int k = (int) sqrt(2 * n) - 1;
     int d = 1;
     int a_1 = 1;
-    int sum_k_plus_1 = (k+1)*k*d + a_1;
-    if (sum_k_plus_1 < n){
-        return k+1;
+    int sum_k_plus_1 = (k + 1) * k * d + a_1;
+    if (sum_k_plus_1 < n) {
+        return k + 1;
     }
     return k;
+}
+
+int exercise043(long long n) {
+    int count = 0;
+    while (n != 0) {
+        count = count + 1;
+        n = n / 10;
+    }
+    return count;
+}
+
+int exercise044(long long n) {
+    int sum = 0;
+    while (n != 0) {
+        sum = sum + (n % 10);
+        n = n / 10;
+    }
+    return sum;
+}
+
+long long exercise045(long long n) {
+    long long product = 1;
+    while (n != 0) {
+        product = product * (n % 10);
+        n = n / 10;
+    }
+    return product;
+}
+
+int exercise046(long long n) {
+    int count = 0;
+    while (n != 0) {
+        if ((n % 10) % 2 == 1) {
+            count = count + 1;
+        }
+        n = n / 10;
+    }
+    return count;
+}
+
+int exercise047(long long n) {
+    int sum = 0;
+    while (n != 0) {
+        if ((n % 10) % 2 == 0) {
+            sum = sum + n % 10;
+        }
+        n = n / 10;
+    }
+    return sum;
+}
+
+long long exercise048(long long n) {
+    long long product = 1;
+    while (n != 0) {
+        if ((n % 10) % 2 == 1) {
+            product = product * (n % 10);
+        }
+        n = n / 10;
+    }
+    return product;
 }
