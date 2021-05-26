@@ -90,3 +90,15 @@ long double exercise038(int n);
 long double exercise039(int n);
 
 long double exercise040(int n, double x);
+
+long double exercise041(int n);
+
+int exercise042(int n);
+long double exercise043(int n);
+long double exercise044(int n);
+long double exercise045(int n);
+long double exercise046(int n);
+long double exercise047(int n);
+long double exercise048(int n);
+long double exercise049(int n);
+long double exercise050(int n);

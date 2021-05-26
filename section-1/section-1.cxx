@@ -413,3 +413,21 @@ long double exercise040(int n,double x) {
     return sum;
 }
 
+long double exercise041(int n){
+    long double sum=0;
+
+    for(int i =1;i<n+1;i++){
+        sum = 1/(sum + 1);
+    }
+    return sum;
+}
+int exercise042(int n){
+//    so easily to recognize that S(k) is
+//    Arithmetic progression (as know as "Cap so cong") with
+//    a_1 (first term) : 1
+//    d (common difference) : 1
+//    so we can easily calculate sum of first n terms using formula
+//    S(n) = n*(a_1 + a_n)/2 with a_n can be calculated with formula
+//    a_n = (n-1)*d - a_1
+
+}
