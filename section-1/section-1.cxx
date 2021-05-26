@@ -427,7 +427,12 @@ int exercise042(int n){
 //    a_1 (first term) : 1
 //    d (common difference) : 1
 //    so we can easily calculate sum of first n terms using formula
-//    S(n) = n*(a_1 + a_n)/2 with a_n can be calculated with formula
-//    a_n = (n-1)*d - a_1
+//    S(k) = k*(a_1 + a_k)/2 with a_n can be calculated with formula
+//    a_k = (k-1)*d + a_1
+//    In conclusion, we just need to solve this inequality:
+//    S(k) < n
+//    However, you can do a loop!
+//    d = 1
+    int k = 2*n/k + 1;
 
 }
