@@ -360,3 +360,50 @@ long double exercise035(int n) {
     }
     return sum;
 }
+
+long double exercise036(int n) {
+    long double sum = 0;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sqrt(n + 1 - i + sum);
+    }
+    return sum;
+}
+
+long double exercise037(int n) {
+//    nth root of x equals x to the 1/n
+//    instead of calculating nth root of x, we calculate x to the 1/n
+    long double sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        sum = pow(sum + i, 1.0 / i);
+    }
+    return sum;
+}
+long double exercise038(int n) {
+//    nth root of x equals x to the 1/n
+//    instead of calculating nth root of x, we calculate x to the 1/n
+    long double sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        sum = pow(sum + i, 1.0 / i);
+    }
+    return sum;
+}
+
+long double exercise039(int n) {
+//    nth root of x equals x to the 1/n
+//    instead of calculating nth root of x, we calculate x to the 1/n
+    long double sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        sum = pow(sum + i, 1.0 / i);
+    }
+    return sum;
+}
+
+long double exercise040(int n) {
+//    nth root of x equals x to the 1/n
+//    instead of calculating nth root of x, we calculate x to the 1/n
+    long double sum = 0;
+    for (int i = 2; i < n + 1; i++) {
+        sum = pow(sum + i, 1.0 / i);
+    }
+    return sum;
+}

@@ -81,12 +81,12 @@ long double exercise034(int n);
 
 long double exercise035(int n);
 
-double exercise036(int n);
+long double exercise036(int n);
 
-double exercise037(int n);
+long double exercise037(int n);
 
-double exercise038(int n);
+long double exercise038(int n);
 
-double exercise039(int n);
+long double exercise039(int n);
 
-double exercise040(int n);
+long double exercise040(int n);
