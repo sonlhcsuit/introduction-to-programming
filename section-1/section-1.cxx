@@ -1,6 +1,6 @@
 #include <vector>
 #include <cmath>
-
+#include <iostream>
 using namespace std;
 
 int exercise001(int n) {
@@ -431,8 +431,17 @@ int exercise042(int n){
 //    a_k = (k-1)*d + a_1
 //    In conclusion, we just need to solve this inequality:
 //    S(k) < n
+//    After applying a lot transformation on this inequality, you can get
+//    k^2 + k < 2n
+//    using approximation here!
 //    However, you can do a loop!
-//    d = 1
-    int k = 2*n/k + 1;
 
+    int k = (int) sqrt(2*n) - 1;
+    int d = 1;
+    int a_1 = 1;
+    int sum_k_plus_1 = (k+1)*k*d + a_1;
+    if (sum_k_plus_1 < n){
+        return k+1;
+    }
+    return k;
 }
