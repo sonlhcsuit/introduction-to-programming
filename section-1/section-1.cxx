@@ -1,4 +1,5 @@
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -316,5 +317,19 @@ bool exercise030(int n) {
 // ex21 already calculate sum of divisors (include n) for us. Or better choice is ex28
     return exercise028(n) == n;
 }
+
+bool exercise031(int n) {
+    if (n == 2 || n == 3 || n == 5 || n == 7) return true;
+    int count = 0;
+    double limit = sqrt(n);
+    for (int i = 2; i < limit; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 
 
