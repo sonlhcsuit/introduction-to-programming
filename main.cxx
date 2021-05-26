@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 //        for (int i = 0; i < res.size(); i++) {
 //            cout << res[i] << " ";
 //        }
-        cout << exercise042(stoi(argv[1]));
+        cout << exercise046(stoi(argv[1]));
 
     } else {
 //        cout << (10);

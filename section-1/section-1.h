@@ -105,8 +105,8 @@ int exercise046(long long n);
 
 int exercise047(long long n);
 
-long double exercise048(int n);
+long long exercise048(long long n);
 
-long double exercise049(int n);
+long long exercise049(int n);
 
-long double exercise050(int n);
+long long exercise050(long long n);

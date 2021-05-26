@@ -507,3 +507,24 @@ long long exercise048(long long n) {
     }
     return product;
 }
+
+long long exercise049(int n) {
+    long long first = 0;
+    while (n != 0) {
+        first = n % 10;
+        n = n / 10;
+    }
+
+    return first;
+}
+
+long long exercise050(long long n) {
+    long long result = 0;
+    while (n != 0) {
+        result = result * 10 + n % 10;
+        n = n / 10;
+    }
+    return result;
+
+
+}
