@@ -320,7 +320,6 @@ bool exercise030(int n) {
 
 bool exercise031(int n) {
     if (n == 2 || n == 3 || n == 5 || n == 7) return true;
-    int count = 0;
     double limit = sqrt(n);
     for (int i = 2; i < limit; i++) {
         if (n % i == 0) {
@@ -330,6 +329,34 @@ bool exercise031(int n) {
     return true;
 }
 
+bool exercise032(int n) {
+    double square_root = sqrt(n);
+    int integer_square_root = (int) square_root;
+    if (integer_square_root * integer_square_root == n)return true;
+    return false;
+}
+
+long double exercise033(int n) {
+    long double sum = 0;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sqrt(2 + sum);
+    }
+    return sum;
+}
 
 
+long double exercise034(int n) {
+    long double sum = 0;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sqrt(i + sum);
+    }
+    return sum;
+}
 
+long double exercise035(int n) {
+    long double sum = 0;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sqrt(n + 1 - i + sum);
+    }
+    return sum;
+}

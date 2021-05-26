@@ -75,11 +75,11 @@ bool exercise031(int n);
 
 bool exercise032(int n);
 
-double exercise033(int n);
+long double exercise033(int n);
 
-double exercise034(int n);
+long double exercise034(int n);
 
-double exercise035(int n);
+long double exercise035(int n);
 
 double exercise036(int n);
 

@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 //        for (int i = 0; i < res.size(); i++) {
 //            cout << res[i] << " ";
 //        }
-        cout << exercise030(stoi(argv[1]));
+        cout << exercise035(stoi(argv[1]));
 
     } else {
 //        cout << (10);
