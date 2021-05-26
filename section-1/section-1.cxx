@@ -378,12 +378,13 @@ long double exercise037(int n) {
     }
     return sum;
 }
+
 long double exercise038(int n) {
 //    nth root of x equals x to the 1/n
 //    instead of calculating nth root of x, we calculate x to the 1/n
     long double sum = 0;
-    for (int i = 2; i < n + 1; i++) {
-        sum = pow(sum + i, 1.0 / i);
+    for (int i = 1; i < n + 1; i++) {
+        sum = pow(sum + i, 1.0 / (i + 1));
     }
     return sum;
 }
@@ -392,18 +393,23 @@ long double exercise039(int n) {
 //    nth root of x equals x to the 1/n
 //    instead of calculating nth root of x, we calculate x to the 1/n
     long double sum = 0;
-    for (int i = 2; i < n + 1; i++) {
-        sum = pow(sum + i, 1.0 / i);
+    int factorial = 1;
+    for (int i = i; i < n + 1; i++) {
+        factorial = factorial*i;
+        sum = pow(sum + factorial, 1.0 / (i + 1));
     }
     return sum;
 }
 
-long double exercise040(int n) {
+long double exercise040(int n,double x) {
 //    nth root of x equals x to the 1/n
 //    instead of calculating nth root of x, we calculate x to the 1/n
     long double sum = 0;
+    long exponent = 1;
     for (int i = 2; i < n + 1; i++) {
-        sum = pow(sum + i, 1.0 / i);
+        exponent = exponent*x;
+        sum = sqrt(sum + exponent);
     }
     return sum;
 }
+

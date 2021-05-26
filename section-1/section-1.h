@@ -89,4 +89,4 @@ long double exercise038(int n);
 
 long double exercise039(int n);
 
-long double exercise040(int n);
+long double exercise040(int n, double x);
