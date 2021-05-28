@@ -110,3 +110,23 @@ long long exercise048(long long n);
 long long exercise049(int n);
 
 long long exercise050(long long n);
+
+short exercise051(long long n);
+
+short exercise052(long long n);
+
+int exercise053(long long n);
+
+int exercise054(long long n);
+
+int exercise055(long long n);
+
+bool exercise056(long long n);
+
+bool exercise057(long long n);
+
+bool exercise058(long long n);
+
+bool exercise059(long long n);
+bool exercise060(long long n);
+
