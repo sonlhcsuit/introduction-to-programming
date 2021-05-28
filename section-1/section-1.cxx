@@ -593,24 +593,53 @@ int exercise055(long long n) {
     org_n = n;
 
     while (org_n != 0) {
-        if (last == n%10){
-            count ++;
+        if (last == n % 10) {
+            count++;
         }
         org_n = org_n / 10;
     }
     return count;
 }
 
-bool exercise056(long long n){
-
+bool exercise056(long long n) {
+    while (n != 0) {
+        if ((n % 10) % 2 == 0) {
+            return false;
+        }
+        n = n / 10;
+    }
+    return true;
 }
 
-bool exercise057(long long n){
-
+bool exercise057(long long n) {
+    while (n != 0) {
+        if ((n % 10) % 1 == 0) {
+            return false;
+        }
+        n = n / 10;
+    }
+    return true;
 }
 
-bool exercise058(long long n);
+bool exercise058(long long n) {
+//    duplicate with ex 56
+    return exercise056(n);
+}
 
-bool exercise059(long long n);
+bool exercise059(long long n) {
+//    use answer from ex 50 (reversed number)
+    return exercise050(n) == n;
+}
 
-bool exercise060(long long n);
+bool exercise060(long long n) {
+//    increase is very different with "not decrease"
+
+    while (n != 0) {
+        if (n % 10 <= (n / 10) % 10) {
+            return false;
+        }
+        n = n / 10;
+    }
+    return true;
+
+}
