@@ -128,5 +128,6 @@ bool exercise057(long long n);
 bool exercise058(long long n);
 
 bool exercise059(long long n);
+
 bool exercise060(long long n);
 

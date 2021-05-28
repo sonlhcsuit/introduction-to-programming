@@ -526,5 +526,91 @@ long long exercise050(long long n) {
     }
     return result;
 
+}
+
+short exercise051(long long n) {
+    short max = 0;
+    while (n != 0) {
+        if (n % 10 > max) {
+            max = n % 10;
+        }
+        n = n / 10;
+    }
+    return max;
+}
+
+short exercise052(long long n) {
+    short min = 0;
+    while (n != 0) {
+        if (n % 10 < min) {
+            min = n % 10;
+        }
+        n = n / 10;
+    }
+    return min;
+}
+
+int exercise053(long long n) {
+    short max = -10;
+    int count = 0;
+    while (n != 0) {
+        if (n % 10 > max) {
+            max = n % 10;
+            count = 0;
+        }
+        if (n % 10 == max) {
+            count++;
+        }
+        n = n / 10;
+    }
+    return count;
+}
+
+int exercise054(long long n) {
+    short min = 10;
+    int count = 0;
+    while (n != 0) {
+        if (n % 10 < min) {
+            min = n % 10;
+            count = 0;
+        }
+        if (n % 10 == min) {
+            count++;
+        }
+        n = n / 10;
+    }
+    return count;
+}
+
+int exercise055(long long n) {
+    int count = 0;
+    int last = 10;
+    long long org_n = n;
+    while (org_n != 0) {
+        last = org_n % 10;
+        org_n = org_n / 10;
+    }
+    org_n = n;
+
+    while (org_n != 0) {
+        if (last == n%10){
+            count ++;
+        }
+        org_n = org_n / 10;
+    }
+    return count;
+}
+
+bool exercise056(long long n){
 
 }
+
+bool exercise057(long long n){
+
+}
+
+bool exercise058(long long n);
+
+bool exercise059(long long n);
+
+bool exercise060(long long n);
