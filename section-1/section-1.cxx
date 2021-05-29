@@ -633,7 +633,6 @@ bool exercise059(long long n) {
 
 bool exercise060(long long n) {
 //    increase is very different with "not decrease"
-
     while (n != 0) {
         if (n % 10 <= (n / 10) % 10) {
             return false;
@@ -641,5 +640,47 @@ bool exercise060(long long n) {
         n = n / 10;
     }
     return true;
+}
+
+bool exercise061(long long n) {
+    while (n != 0) {
+        if (n % 10 >= (n / 10) % 10) {
+            return false;
+        }
+        n = n / 10;
+    }
+    return true;
+}
+
+int exercise062(int a, int b) {
+//    Euclidean algorithms
+    while (b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
+int exercise063(int a, int b) {
+    return abs(a * b) / exercise062(a, b);
+}
+
+double exercise064(double a, double b) {
+    if (a == 0) return NAN;
+    return -b/a;
+}
+
+double exercise065(double a, double b, double c){
 
 }
+
+double exercise066(double a, double b, double c);
+
+double exercise067(int n, double x);
+
+double exercise068(int n, double x);
+
+double exercise069(int n, double x);
+
+double exercise070(int n, double x);

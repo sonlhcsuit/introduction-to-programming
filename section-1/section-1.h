@@ -131,3 +131,19 @@ bool exercise059(long long n);
 
 bool exercise060(long long n);
 
+bool exercise061(long long n);
+
+int exercise062(int a,int b);
+
+int exercise063(int a,int b);
+
+double exercise064(double a, double b );
+
+double exercise065(double a, double b ,double c);
+
+double exercise066(double a, double b ,double c);
+
+double exercise067(int n, double x);
+double exercise068(int n, double x);
+double exercise069(int n, double x);
+double exercise070(int n, double x);
