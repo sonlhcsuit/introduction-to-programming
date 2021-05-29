@@ -668,19 +668,73 @@ int exercise063(int a, int b) {
 
 double exercise064(double a, double b) {
     if (a == 0) return NAN;
-    return -b/a;
+    return -b / a;
 }
 
-double exercise065(double a, double b, double c){
-
+vector<double> exercise065(double a, double b, double c) {
+    vector<double> t;
+    double delta = b * b - 4 * a * c;
+    if (delta < 0) return t;
+    if (delta == 0) {
+        t.push_back(-b / (2 * a));
+    } else if (delta > 0) {
+        t.push_back((-b + sqrt(delta)) / (2 * a));
+        t.push_back((-b - sqrt(delta)) / (2 * a));
+    }
+    return t;
 }
 
-double exercise066(double a, double b, double c);
+vector<double> exercise066(double a, double b, double c) {
+    vector<double> res = exercise065(a, b, c);
+    vector<double> solutions;
+    for (int i = 0; i < res.size(); i++) {
+        if (res[i] == 0) solutions.push_back(res[i]);
+        if (res[i] > 0) {
+            solutions.push_back(sqrt(res[i]));
+            solutions.push_back(-sqrt(res[i]));
+        }
+    }
+    return solutions;
+}
 
-double exercise067(int n, double x);
+double exercise067(int n, double x) {
+    double sum = 0;
+    double exponent = 1;
+    for (int i = 1; i < n + 1; i++) {
+        exponent = exponent * x;
 
-double exercise068(int n, double x);
+        sum = sum + (i % 2 == 1 ? 1 : -1) * exponent;
+    }
 
-double exercise069(int n, double x);
+    return sum;
+}
 
-double exercise070(int n, double x);
+double exercise068(int n, double x) {
+    double sum = 0;
+    double exponent = 1;
+    for (int i = 1; i < n + 1; i++) {
+        exponent = exponent * x * x;
+        sum = sum + (i % 2 == 1 ? -1 : 1) * exponent;
+    }
+    return sum;
+}
+
+double exercise069(int n, double x) {
+    double sum = x;
+    double exponent = x;
+    for (int i = 1; i < n + 1; i++) {
+        exponent = exponent * x * x;
+        sum = sum + (i % 2 == 1 ? -1 : 1) * exponent;
+    }
+    return sum;
+}
+
+double exercise070(int n, double x) {
+    double sum = 0;
+    double acc = 0;
+    for (int i = 1; i < n + 1; i++) {
+        acc = acc + i;
+        sum = sum + (i % 2 == 1 ? 1.0 : -1.0) / i;
+    }
+    return sum;
+}

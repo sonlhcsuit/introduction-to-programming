@@ -139,9 +139,9 @@ int exercise063(int a,int b);
 
 double exercise064(double a, double b );
 
-double exercise065(double a, double b ,double c);
+vector<double> exercise065(double a, double b ,double c);
 
-double exercise066(double a, double b ,double c);
+vector<double> exercise066(double a, double b ,double c);
 
 double exercise067(int n, double x);
 double exercise068(int n, double x);
