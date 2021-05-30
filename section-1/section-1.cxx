@@ -734,7 +734,57 @@ double exercise070(int n, double x) {
     double acc = 0;
     for (int i = 1; i < n + 1; i++) {
         acc = acc + i;
-        sum = sum + (i % 2 == 1 ? 1.0 : -1.0) / i;
+        sum = sum + (i % 2 == 1 ? 1.0 : -1.0) / acc;
     }
     return sum;
 }
+
+double exercise071(int n, double x) {
+    double sum = 0;
+    double acc = 0;
+    double exponent = 1;
+    for (int i = 1; i < n + 1; i++) {
+        acc = acc + i;
+        exponent = exponent * x;
+        sum = sum + (i % 2 == 1 ? -1.0 : 1.0) * exponent / acc;
+    }
+    return sum;
+}
+
+double exercise072(int n, double x) {
+    double sum = 0;
+    double factorial = 1;
+    double exponent = 1;
+    for (int i = 1; i < n + 1; i++) {
+        factorial = factorial * i;
+        exponent = exponent * x;
+        sum = sum + (i % 2 == 1 ? -1.0 : 1.0) * exponent / factorial;
+    }
+    return sum;
+}
+
+double exercise073(int n, double x) {
+    double sum = -1;
+    double factorial = 1;
+    double exponent = 1;
+    for (int i = 1; i < n + 1; i++) {
+        factorial = factorial * (2 * i) * (2 * i - 1);
+        exponent = exponent * x * x;
+        sum = sum + (i % 2 == 1 ? 1.0 : -1.0) * exponent / factorial;
+    }
+    return sum;
+}
+
+double exercise074(int n, double x) {
+    double sum = 1 - x;
+    double factorial = 1;
+    double exponent = x;
+    for (int i = 1; i < n + 1; i++) {
+        factorial = factorial * (2 * i) * (2 * i + 1);
+        exponent = exponent * x * x;
+        sum = sum + (i % 2 == 1 ? 1.0 : -1.0) * exponent / factorial;
+    }
+    return sum;
+}
+
+

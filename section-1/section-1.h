@@ -150,3 +150,23 @@ double exercise068(int n, double x);
 double exercise069(int n, double x);
 
 double exercise070(int n, double x);
+
+double exercise071(int n, double x);
+
+double exercise072(int n, double x);
+
+double exercise073(int n, double x);
+
+double exercise074(int n, double x);
+
+bool exercise075(int n);
+
+bool exercise076(int n);
+
+double exercise077(int n, double x);
+
+double exercise078(int n, double x);
+
+double exercise079(int n, double x);
+
+double exercise080(int n, double x);
