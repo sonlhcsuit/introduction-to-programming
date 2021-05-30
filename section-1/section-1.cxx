@@ -787,4 +787,16 @@ double exercise074(int n, double x) {
     return sum;
 }
 
+bool exercise075(int n) {
+//    log a x equal log b a / log b x
+    double log_2_k = log(n) / log(2);
+    cout << log_2_k << "\n";
+    return ((int) log_2_k) == log_2_k;
+}
 
+bool exercise076(int n){
+    //    log a x equal log b a / log b x
+    double log_3_k = log(n) / log(3);
+    cout << log_3_k << "\n";
+    return ((int) log_3_k) == log_3_k;
+}
