@@ -163,10 +163,10 @@ bool exercise075(int n);
 
 bool exercise076(int n);
 
-double exercise077(int n, double x);
+int exercise077(int n);
 
-double exercise078(int n, double x);
+vector<int> exercise078(int n);
 
-double exercise079(int n, double x);
+int exercise079(long long n);
 
 double exercise080(int n, double x);

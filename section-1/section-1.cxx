@@ -800,3 +800,23 @@ bool exercise076(int n){
     cout << log_3_k << "\n";
     return ((int) log_3_k) == log_3_k;
 }
+
+int exercise077(int n){
+//    exercise 01 duplicated
+    return exercise001(n);
+}
+
+vector<int> exercise078(int n){
+//    exercise 20 duplicated
+    return exercise020(n);
+}
+
+int exercise079(long long n){
+//    exercise 43 duplicated
+    return exercise043(n);
+}
+
+double exercise080(int n, double x){
+//    exercise 16 duplicated
+    return exercise016(n,x);
+}
