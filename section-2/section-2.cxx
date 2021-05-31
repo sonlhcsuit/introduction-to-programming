@@ -31,20 +31,38 @@ int exercise085(int a) {
     return a % 3 + 1;
 }
 
-long long exercise086(int n){
-    long long sum =0;
-    for(int i =1;i<n+1;i++){
-        sum = sum + i*i*i;
+long long exercise086(int n) {
+    long long sum = 0;
+    for (int i = 1; i < n + 1; i++) {
+        sum = sum + i * i * i;
     }
     return sum;
 }
 
-int exercise087(int a, int b, int c){
-
+int exercise087(int n) {
+//    Can reuse exercise 43 to fast-implementation this one
+//    base on arithmetic progression
+    return exercise042(n) + 1;
 }
 
-int exercise088(int a, int b, int c);
+int exercise088() {
+    for (int i = 65; i < 91; i++) {
+        char s = i;
+        cout << s << " ";
+    }
+    cout << "\n";
+    return 0;
+}
 
-int exercise089(int a, int b, int c);
+int exercise089(int n) {
+    long sum = 0;
+    for (int i = 1; i < n + 1; i=i+2) {
+        sum = sum +i;
+    }
+    return sum;
+}
 
-int exercise090(int a, int b, int c);
+int exercise090(int n) {
+//    exercise 42 duplicated
+    return exercise042(n);
+}

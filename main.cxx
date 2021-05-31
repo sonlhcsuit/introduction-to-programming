@@ -15,12 +15,15 @@ int main(int argc, char **argv) {
 //        }
 
 //        cout << exercise076(stoi(argv[1]));
-        cout << exercise083(stod(argv[1]), stod(argv[2]));
+//        cout << exercise083(stod(argv[1]), stod(argv[2]));
 //        cout << exercise082(stoi(argv[1]), stoi(argv[2]), stoi(argv[3]));
 
     } else {
 //        cout << (10);
 
+
     }
+    cout << exercise089();
+
     return 1;
 }

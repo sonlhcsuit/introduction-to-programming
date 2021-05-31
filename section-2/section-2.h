@@ -18,10 +18,10 @@ int exercise085(int a);
 
 long long exercise086(int a);
 
-int exercise087(int a, int b, int c);
+int exercise087(int n);
 
-int exercise088(int a, int b, int c);
+int exercise088();
 
-int exercise089(int a, int b, int c);
+int exercise089(int n);
 
-int exercise090(int a, int b, int c);
+int exercise090(int a);
