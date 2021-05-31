@@ -23,7 +23,6 @@ int main(int argc, char **argv) {
 
 
     }
-    cout << exercise089();
 
     return 1;
 }
