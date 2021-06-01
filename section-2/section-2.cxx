@@ -154,13 +154,58 @@ string exercise097(double a, double b, double c) {
 vector<double> exercise098(double a, double b, double c, double d, double e, double f) {
 //    because this is very easy to compute using basic math
 //    if more than 3 equation, system of linear equation will be considered
-//    but in this one, i will implement system of linear equation solvers
+//    but in this one, i will use the dense implementation
+//    because implement an system of linear equations is not easy (that true!)
+//    Cramer method is a nightmare with O(n^3)
+//    ax + by = c
+//    dx + ey = f
+//    we have 3 case:
+//    case 1: no solution - [nan,nan]
+//    case 2: only solution - [N,N]
+//    case 3: countless solution [nan]
+//    line 1 : ax + by = c => y = -ax/b + c
+//    line 2 : dx + ey = f => y = -dx/e + f
+//    slope are the same => parallel
+//    =========================================================================
+//    case 1: no solution - 2 lines are parallel. slope must be the same
+//    a/d == b/e
+//    special case : a , b , d , e with zero - no solver because too long for explain.
+    cout << a << " " << b << " " << c << " " << d << " " << e << " " << f << "\n";
+    vector<double> solution;
+    if (a == 0 || b == 0 || d == 0 || e == 0) {
+        return solution;
+    }
 
-    vector<double> solutions;
 
+//    case 1: no solution - 2 lines are parallel.
+    if (a / d == b / e && a / d != c / f) {
+//        slopes are the same, but not with constant
+        solution.push_back(NAN);
+        solution.push_back(NAN);
+        return solution;
+    }
+//    case 3: countless solution - 2 lines are the same.
+    if (a / d == b / e && a / d == c / f) {
+//        3 coefficients of lines must be the same in term of ratio.
+        solution.push_back(NAN);
 
-    return solutions;
+        return solution;
+    }
+//    case 2: unique solution, slope are different in term of ratio
+    if (a / d != b / e) {
+//        find x first, then y
+//        check the first equation
+        double x = 0, y = 0;
+        double y_ratio = b / e;
+        x = (c - y_ratio * f) / (a - d * y_ratio);
+        y = (c - a * x) / b;
+        solution.push_back(x);
+        solution.push_back(y);
+        return solution;
+    }
+    solution.push_back(NAN);
 
+    return solution;
 }
 
 vector<double> exercise099(double a, double b, double c) {
