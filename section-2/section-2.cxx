@@ -108,9 +108,9 @@ int exercise094() {
 
 vector<double> exercise095(double a, double b, double c) {
     vector<double> t;
-    t.push_back(abs(a));
-    t.push_back(abs(b));
-    t.push_back(abs(c));
+//    t.push_back(abs(a));
+//    t.push_back(abs(b));
+//    t.push_back(abs(c));
 
     return t;
 }
@@ -151,7 +151,7 @@ string exercise097(double a, double b, double c) {
 
 }
 
-vector<double> exercise098(double a,double b,double c,double d,double e,double f){
+vector<double> exercise098(double a, double b, double c, double d, double e, double f) {
 //    because this is very easy to compute using basic math
 //    if more than 3 equation, system of linear equation will be considered
 //    but in this one, i will implement system of linear equation solvers
@@ -161,5 +161,25 @@ vector<double> exercise098(double a,double b,double c,double d,double e,double f
 
     return solutions;
 
+}
 
+vector<double> exercise099(double a, double b, double c) {
+//    check exercise 82 for more information
+    vector<double> t;
+    double max = 0;
+    double min = 0;
+    min = (a + b - abs(a - b)) / 2;
+    min = (min + c - abs(min - c)) / 2;
+    max = (a + b + abs(a - b)) / 2;
+    max = (max + c + abs(max - c)) / 2;
+    t.push_back(min);
+    t.push_back(a + b + c - max - min);
+    t.push_back(max);
+    return t;
+}
+
+
+vector<double> exercise100(double a, double b, double c) {
+//    exercise 65 duplicated
+    return exercise065(a, b, c);
 }

@@ -42,6 +42,6 @@ string exercise097(double a,double b,double c);
 
 vector<double> exercise098(double a,double b,double c,double d,double e,double f);
 
-int exercise099(int a);
+vector<double> exercise099(double a, double b, double c);
 
-int exercise100(int a);
+vector<double> exercise100(double a, double b,double c);
