@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
     cout << "Hello World\n";
-    if (argc == 1 + 2) {
+    if (argc == 1 + 3) {
 //        vector<double> res = exercise066(stoi(argv[1]), stoi(argv[2]), stoi(argv[3]));
 //        for (int i = 0; i < res.size(); i++) {
 //            cout << res[i] << " ";
@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 
 //        cout << exercise076(stoi(argv[1]));
 //        cout << exercise083(stod(argv[1]), stod(argv[2]));
-//        cout << exercise082(stoi(argv[1]), stoi(argv[2]), stoi(argv[3]));
+        cout << exercise097(stod(argv[1]), stod(argv[2]), stod(argv[3]));
 
     } else {
 //        cout << (10);

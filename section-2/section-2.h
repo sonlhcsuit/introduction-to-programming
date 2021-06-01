@@ -25,3 +25,23 @@ int exercise088();
 int exercise089(int n);
 
 int exercise090(int a);
+
+int exercise091();
+
+int exercise092(int a, int b);
+
+bool exercise093(int a);
+
+int exercise094();
+
+vector<double> exercise095(double a, double b, double c);
+
+double exercise096(double x);
+
+string exercise097(double a,double b,double c);
+
+vector<double> exercise098(double a,double b,double c,double d,double e,double f);
+
+int exercise099(int a);
+
+int exercise100(int a);

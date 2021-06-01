@@ -3,6 +3,7 @@
 //
 #include <cmath>
 #include <iostream>
+#include <string>
 #include "../section-1/section-1.h"
 
 using namespace std;
@@ -56,8 +57,8 @@ int exercise088() {
 
 int exercise089(int n) {
     long sum = 0;
-    for (int i = 1; i < n + 1; i=i+2) {
-        sum = sum +i;
+    for (int i = 1; i < n + 1; i = i + 2) {
+        sum = sum + i;
     }
     return sum;
 }
@@ -65,4 +66,100 @@ int exercise089(int n) {
 int exercise090(int n) {
 //    exercise 42 duplicated
     return exercise042(n);
+}
+
+int exercise091() {
+    for (int i = 1; i < 101; i++) {
+        cout << i << " ";
+    }
+    return 0;
+}
+
+int exercise092(int a, int b) {
+//    exercise 62 duplicated
+//    return exercise062(a, b);
+    while (b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
+bool exercise093(int a) {
+    if (a == 2 || a == 3 || a == 5 || a == 7) return true;
+    for (int i = 2; i < sqrt(a); i++) {
+        if (a % i == 0) {
+            return false;
+        }
+    }
+    return true;
+
+}
+
+int exercise094() {
+    for (int i = 1; i < 101; i = i + 2) {
+        if (i != 5 && i != 7 && i != 93) {
+            cout << i << " ";
+        }
+    }
+    return 0;
+}
+
+vector<double> exercise095(double a, double b, double c) {
+    vector<double> t;
+    t.push_back(abs(a));
+    t.push_back(abs(b));
+    t.push_back(abs(c));
+
+    return t;
+}
+
+double exercise096(double x) {
+    double result = 0;
+    if (x >= 5.0) {
+        result = 2 * x * x + 5 * x + 9;
+    }
+    if (x < 5) {
+        result = -2 * x * x + 4 * x - 9;
+    }
+    return result;
+}
+
+string exercise097(double a, double b, double c) {
+//   Validation of triangle
+    if (!(a + b > c && a + c > b && b + c > a)) {
+//        Triangle inequality
+        return "Not a triangle";
+    }
+//   Equilateral - Tam giac deu
+    if (a == b && b == c && c == a) {
+        return "Equilateral";
+    }
+    if (b == c || a == b || c == a) {
+//        Isosceles - Tam giac can
+//      Right and Isosceles - Tam giac vuong can
+        if (a * a - b * b - c * c < 1e-10 || b * b - a * a - c * c < 1e-10 || c * c - a * a - b * b < 1e-10) {
+            return "Right Isosceles";
+        }
+        return "Isosceles";
+    }
+    if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b) {
+        return "Right";
+    }
+    return "Scalene";
+
+}
+
+vector<double> exercise098(double a,double b,double c,double d,double e,double f){
+//    because this is very easy to compute using basic math
+//    if more than 3 equation, system of linear equation will be considered
+//    but in this one, i will implement system of linear equation solvers
+
+    vector<double> solutions;
+
+
+    return solutions;
+
+
 }
