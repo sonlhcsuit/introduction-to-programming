@@ -228,3 +228,161 @@ vector<double> exercise100(double a, double b, double c) {
 //    exercise 65 duplicated
     return exercise065(a, b, c);
 }
+
+//
+
+short exercise101(int month, int year) {
+    short date_of_feb = 28;
+    if ((year % 4 == 0 && year != 100) || year % 400) {
+        date_of_feb = 29;
+    }
+    switch (month) {
+        case 2:
+            return date_of_feb;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return 31;
+        default:
+            return 30;
+    }
+
+}
+
+string exercise102(int day, int month, int year) {
+    bool isLeap = false;
+    if ((year % 4 == 0 && year != 100) || year % 400) {
+        isLeap = true;
+    }
+    day = day + 1;
+    switch (month) {
+        case 2:
+            if ((day > 29 && isLeap) || (day > 28 && !isLeap)) {
+                month = 3;
+                day = 1;
+            }
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (day > 31) {
+                day = 1;
+                month = month + 1;
+            }
+            break;
+        default:
+            if (day > 30) {
+                day = 1;
+                month = month + 1;
+            }
+    }
+    if (month > 12) {
+        month = 1;
+        year = year + 1;
+    }
+
+    return to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+
+}
+
+string exercise103(int day, int month, int year) {
+    bool isLeap = false;
+    if ((year % 4 == 0 && year != 100) || year % 400) {
+        isLeap = true;
+    }
+    day = day - 1;
+    if (day == 0) {
+        month = month - 1;
+    }
+    switch (month) {
+        case 2:
+            if ((day == 0 && isLeap)) {
+                day = 29;
+            } else if (day == 0 && !isLeap) {
+                day = 28;
+            }
+            break;
+        case 0:
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (day == 0) {
+                day = 31;
+            }
+            break;
+        default:
+            if (day == 0) {
+                day = 30;
+            }
+    }
+
+    if (month == 0) {
+        month = 12;
+        year = year - 1;
+    }
+
+    return to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+}
+
+int exercise104(int day, int month, int year) {
+    bool isLeap = false;
+    if ((year % 4 == 0 && year != 100) || year % 400) {
+        isLeap = true;
+    }
+    int ith = 0;
+    switch (month - 1) {
+        case 12:
+            ith = ith + 31;
+        case 11:
+            ith = ith + 30;
+        case 10:
+            ith = ith + 31;
+        case 9:
+            ith = ith + 30;
+        case 8:
+            ith = ith + 31;
+        case 7:
+            ith = ith + 31;
+        case 6:
+            ith = ith + 30;
+        case 5:
+            ith = ith + 31;
+        case 4:
+            ith = ith + 30;
+        case 3:
+            ith = ith + 31;
+        case 2:
+            ith = ith + 28;
+        case 1:
+            ith = ith + 31;
+    }
+    if ((isLeap && month > 2) ) {
+        ith = ith + 1;
+    }
+
+    return ith + day;
+}
+
+string exercise105(short number);
+
+string exercise106(int number);
+
+double exercise107(int n, double x);
+
+double exercise108(int x, int y);
+
+void exercise109(int n);
+
+int exercise110();
