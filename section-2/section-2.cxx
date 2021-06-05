@@ -567,15 +567,17 @@ vector<int> exercise119(int n) {
     }
     return prime;
 }
+
 vector<int> exercise120(int n) {
-    int i =2;
+    int i = 2;
     vector<int> squares;
-    while(i*i < n){
-        squares.push_back(i*i);
-        i = i+1;
+    while (i * i < n) {
+        squares.push_back(i * i);
+        i = i + 1;
     }
     return squares;
 }
+
 vector<int> exercise121(int n) {
     vector<int> narcissistic;
     for (int i = 1; i < n; i++) {
@@ -587,14 +589,46 @@ vector<int> exercise121(int n) {
         }
         int s = 0;
         temp = i;
-        while (temp!=0){
-            int digit = temp%10;
-            s = s + pow(digit,no_digits);
+        while (temp != 0) {
+            int digit = temp % 10;
+            s = s + pow(digit, no_digits);
             temp = temp / 10;
         }
-        if (s == i){
+        if (s == i) {
             narcissistic.push_back(i);
         }
     }
     return narcissistic;
 }
+
+
+double exercise122(vector<double> array);
+
+int exercise123(vector<int> array);
+
+bool exercise124(vector<int> array);
+
+int exercise125(vector<int> array);
+
+double exercise126(vector<double> array);
+
+vector<double> exercise127(vector<double> array);
+
+// 128 129 130 131 are empty because too easy
+vector<int> exercise132(vector<int> array);
+
+vector<int> exercise133(vector<double> array);
+
+double exercise134(vector<double> array);
+
+double exercise135(vector<double> array);
+
+double exercise136(vector<double> array);
+
+int exercise137(vector<double> array);
+
+int exercise138(vector<int> array);
+
+int exercise139(vector<int> array);
+
+int exercise140(vector<double> array);
