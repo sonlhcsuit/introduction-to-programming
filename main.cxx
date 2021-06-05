@@ -15,16 +15,15 @@ int main(int argc, char **argv) {
 //        }
 
 //        cout << e
-        exercise109(stoi(argv[1]));
+//        exercise119(stoi(argv[1]));
 //        cout << exercise083(stod(argv[1]), stod(argv[2]));
 //        cout << exercise104(stod(argv[1]), stod(argv[2]), stod(argv[3]));
 //        exercise098
-//        vector<double> res = exercise098(stod(argv[1]), stod(argv[2]), stod(argv[3]),
-//                                         stod(argv[4]), stod(argv[5]), stod(argv[6]));
-//
-//        for (int i = 0; i < res.size(); i++) {
-//            cout << res[i] << " ";
-//        }
+        vector<int> res = exercise120(stoi(argv[1]));
+
+        for (int i = 0; i < res.size(); i++) {
+            cout << res[i] << " ";
+        }
     } else {
 //        cout << (10);
 

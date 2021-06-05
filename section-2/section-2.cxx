@@ -474,7 +474,7 @@ string exercise106(int number) {
     if (number < 100) {
         return exercise105(number);
     }
-    if (number>999){
+    if (number > 999) {
         return "";
     }
     int hundred = number / 100;
@@ -483,27 +483,27 @@ string exercise106(int number) {
 
 }
 
-double exercise107(int n, double x){
+double exercise107(int n, double x) {
 //    you can use pow built-in function here
-    return pow(x,1.0/n);
+    return pow(x, 1.0 / n);
 
 //    if you wanna try hard by implement a power function with degree
 //    as real number, you first implement log natural (euler number - e)
 //    function (using Taylor series for implement it). Check google!
 }
 
-double exercise108(int x, int y){
-    return pow(x,y);
+double exercise108(int x, int y) {
+    return pow(x, y);
 }
 
-void exercise109(int n){
-    for(int i = 1;i<10;i++){
-        string str = to_string(n) + " x " +to_string(i) + " = " + to_string(n*i);
-        cout<<str <<"\n";
+void exercise109(int n) {
+    for (int i = 1; i < 10; i++) {
+        string str = to_string(n) + " x " + to_string(i) + " = " + to_string(n * i);
+        cout << str << "\n";
     }
 }
 
-int exercise110(){
+int exercise110() {
 //    simplify by using 20 - 1,2,5
 //    A is number of "1"
 //    B is number of "2"
@@ -513,16 +513,80 @@ int exercise110(){
 //    0<= B <= 10
 //    0<= C <= 5
 //    brute force ->
-    int a,b,c =0;
+    int a = 0, b = 0, c = 0;
     int count = 0;
-    for(a = 0;a <= 20; a++){
-        for(b=0;b<=10;b++){
-            for(c=0;c<=5;c++){
-                if (a + 2*b + 5*c==20){
+    for (a = 0; a <= 20; a++) {
+        for (b = 0; b <= 10; b++) {
+            for (c = 0; c <= 5; c++) {
+                if (a + 2 * b + 5 * c == 20) {
                     count++;
                 }
             }
         }
     }
     return count;
+}
+
+double exercise113(double x) {
+//    exercise 74 duplicated
+    return exercise074(20, x);
+}
+
+string exercise115(string name, double math, double literature) {
+    return name + " " + to_string((math + literature) / 2);
+}
+
+int exercise116(int n) {
+//    exercise 001 duplicated;
+    return exercise001(n);
+}
+
+double exercise117(int n, double x) {
+    return exercise012(n, x);
+}
+
+vector<int> exercise119(int n) {
+//    implement sieve of eratosthenes
+    vector<bool> sieve(n + 1, true);
+    sieve[0] = false;
+    sieve[1] = false;
+    for (int i = 2; i < sieve.size(); i++) {
+        if (!sieve[i]) {
+            continue;
+        } else {
+            for (int j = 2; j * i < sieve.size(); j++) {
+                sieve[j * i] = false;
+            }
+        }
+    }
+    vector<int> prime;
+    for (int i = 0; i < sieve.size(); i++) {
+        if (sieve[i]) {
+            prime.push_back(i);
+        }
+    }
+    return prime;
+}
+
+vector<int> exercise120(int n) {
+    vector<int> narcissistic;
+    for (int i = 1; i < n; i++) {
+        int no_digits = 0;
+        int temp = i;
+        while (temp != 0) {
+            no_digits++;
+            temp = temp / 10;
+        }
+        int s = 0;
+        temp = i;
+        while (temp!=0){
+            int digit = temp%10;
+            s = s + pow(digit,no_digits);
+            temp = temp / 10;
+        }
+        if (s == i){
+            narcissistic.push_back(i);
+        }
+    }
+    return narcissistic;
 }

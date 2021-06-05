@@ -57,3 +57,11 @@ double exercise108(int x,int y);
 void exercise109(int n);
 int exercise110();
 
+double exercise113(double x);
+string exercise115(string name, double math,double literature);
+int exercise116(int x);
+double exercise117(int n,double x);
+vector<int> exercise119(int n);
+vector<int> exercise120(int n);
+
+

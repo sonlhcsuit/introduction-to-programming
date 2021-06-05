@@ -33,7 +33,7 @@ unsigned long long exercise010(double x, int n);
 
 unsigned long long exercise011(int n);
 
-unsigned long long exercise012(int n, int x);
+double exercise012(int n, double x);
 
 unsigned long long exercise013(int n, int x);
 

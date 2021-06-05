@@ -105,8 +105,8 @@ unsigned long long exercise011(int n) {
     return sum;
 }
 
-unsigned long long exercise012(int n, int x) {
-    unsigned long long sum = 0;
+double exercise012(int n, double x) {
+    double sum = 0;
     long long x_to_the_i = 1;
     for (int i = 1; i < n + 1; i++) {
         x_to_the_i = x_to_the_i * x;
