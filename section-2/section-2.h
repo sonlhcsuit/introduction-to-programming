@@ -93,6 +93,7 @@ double exercise126(vector<double> array);
 vector<double> exercise127(vector<double> array);
 
 // 128 129 130 131 are empty because too easy
+
 vector<int> exercise132(vector<int> array);
 
 vector<int> exercise133(vector<double> array);

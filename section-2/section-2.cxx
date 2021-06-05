@@ -4,6 +4,7 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include "../section-1/section-1.h"
 
 
@@ -602,22 +603,81 @@ vector<int> exercise121(int n) {
 }
 
 
-double exercise122(vector<double> array);
+double exercise122(vector<double> array) {
+    double max_value = -1000000000;
+    for (int i = 0; i < array.size(); i++) {
+        if (max_value < array[i]) {
+            max_value = array[i];
+        }
+    }
+    return max_value;
+}
 
-int exercise123(vector<int> array);
+int exercise123(vector<int> array) {
+    double min_value = 1000000000;
+    int min_index = -1;
+    for (int i = 0; i < array.size(); i++) {
+        if (min_value > array[i]) {
+            min_value = array[i];
+            min_index = i;
+        }
+    }
+    return min_index;
+}
 
-bool exercise124(vector<int> array);
+bool exercise124(vector<int> array) {
+    for (int i : array) {
+        if (i < 2004 && i % 2 == 0) {
+            return true;
+        }
+    }
+    return false;
+}
 
-int exercise125(vector<int> array);
+int exercise125(vector<int> array) {
+//    you can implement a loop over an array to check whether element
+//    existed or not
+    vector<int> prime = exercise119(100);
+    int no_prime = 0;
+    for (int i : prime) {
+        int ct = count(array.begin(), array.end(), i);
+        no_prime = no_prime + ct;
+    }
+    return no_prime;
+}
 
-double exercise126(vector<double> array);
+double exercise126(vector<double> array) {
+    double sum = 0;
+    for (double element : array) {
+        sum = sum + (element < 0) ? element : 0;
+    }
+    return sum;
+}
 
-vector<double> exercise127(vector<double> array);
+vector<double> exercise127(vector<double> array) {
+//    quick sort, bubble sort, or something is suitable for you
+    sort(array.begin(), array.end());
+    return array;
+}
 
 // 128 129 130 131 are empty because too easy
-vector<int> exercise132(vector<int> array);
+vector<int> exercise132(vector<int> array) {
+    vector<int> t;
+    copy_if(array.begin(), array.end(), back_inserter(t), [](int i) { return i >= 0; });
+    return t;
+}
 
-vector<int> exercise133(vector<double> array);
+
+vector<int> exercise133(vector<double> array) {
+    vector<int> t;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] < 0) {
+            t.push_back(i);
+        }
+    }
+    return t;
+
+}
 
 double exercise134(vector<double> array);
 
