@@ -108,6 +108,6 @@ int exercise137(vector<double> array);
 
 int exercise138(vector<int> array);
 
-int exercise139(vector<int> array);
+unsigned long exercise139(vector<long long> array);
 
-int exercise140(vector<double> array);
+double exercise140(vector<double> array);

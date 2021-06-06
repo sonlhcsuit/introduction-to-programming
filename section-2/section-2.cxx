@@ -679,16 +679,79 @@ vector<int> exercise133(vector<double> array) {
 
 }
 
-double exercise134(vector<double> array);
+double exercise134(vector<double> array) {
+    double max_value = -10000000;
+    for (int i = 0; i < array.size(); i++) {
+        max_value = max_value < array[i] ? array[i] : max_value;
+    }
+    return max_value;
+}
 
-double exercise135(vector<double> array);
+double exercise135(vector<double> array) {
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] > 0) return array[i];
+    }
+    return -1;
+}
 
-double exercise136(vector<double> array);
+double exercise136(vector<double> array) {
+    for (int i = array.size() - 1; i > -1; i--) {
+        if ((int) (array[i]) % 2 == 0) return array[i];
+    }
+    return -1;
+}
 
-int exercise137(vector<double> array);
+int exercise137(vector<double> array) {
+    int index = -1;
+    int min_value = 100000000;
+    for (int i = 0; i < array.size(); i++) {
+        if (min_value > array[i]) {
+            min_value = array[i];
+            index = i;
+        }
+    }
+    return index;
+}
 
-int exercise138(vector<int> array);
+int exercise138(vector<int> array) {
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] % 2 == 0) return i;
+    }
+    return -1;
+}
 
-int exercise139(vector<int> array);
+unsigned long exercise139(vector<long long> array) {
+//    perfect number is a number which sum of all its divisor is itself
+//    there are only 10 perfect number  up to now (to my best knowledge)
+//    6, 28, 496 , 8128 ,33550336,
+//    8589869056,
+//    137438691328,
+//    2305843008139952128,
+//    2658455991569831744654692615953842176,
+//    191561942608236107294793378084303638130997321548169216
+//    so we just to check that any number in that size (first 8 numbers)
+    for (unsigned long i = array.size() - 1; i > -1; i--) {
+        if (array[i] == 6 || array[i] == 28 ||
+            array[i] == 496 || array[i] == 8128 ||
+            array[i] == 33550336 || array[i] == 8589869056 ||
+            array[i] == 137438691328 || array[i] == 2305843008139952128) {
+            return i;
+        }
+    }
+    return -1;
+}
 
-int exercise140(vector<double> array);
+double exercise140(vector<double> array) {
+    int index = -1;
+    double min_value = 10000000000;
+    for (int i = 0; i < array.size(); i++) {
+        if (min_value > array[i] && array[i] > 0) {
+            min_value = array[i];
+            index = i;
+        }
+    }
+    if (index != -1) {
+        return min_value;
+    }
+    return -1;
+}
