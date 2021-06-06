@@ -7,6 +7,8 @@ add_executable(introduction-to-programming
         main.cxx
         section-1/section-1.h
         section-2/section-2.h
+        section-5/section-5.h
         section-1/section-1.cxx
         section-2/section-2.cxx
+        section-5/section-5.cxx
         )
