@@ -56,6 +56,6 @@ double exercise147(vector<double> array);
 
 int exercise148(vector<int> array);
 
-int exercise149(vector<int> array);
+unsigned long exercise149(vector<long long> array);
 
 double exercise150(vector<double> array);

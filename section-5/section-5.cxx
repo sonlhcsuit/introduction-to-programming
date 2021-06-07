@@ -219,13 +219,52 @@ unsigned long exercise145(vector<long long> array) {
 }
 
 double exercise146(vector<double> array) {
-for(int i = 0)
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] < 0) {
+            return array[i];
+        }
+    }
+    return 1;
 }
 
-double exercise147(vector<double> array);
+double exercise147(vector<double> array) {
+    for (unsigned long i = array.size() - 1; i > -1; i--) {
+        if (array[i] > 0) {
+            return array[i];
 
-int exercise148(vector<int> array);
+        }
+    }
+    return -1;
+}
 
-int exercise149(vector<int> array);
+int exercise148(vector<int> array) {
+//    ex144 semi-duplicated
+    for (unsigned long i = array.size() - 1; i > -1; i--) {
+        for (int j = 2; j < sqrt(i); j++) {
+            if (i % j == 0) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
 
-double exercise150(vector<double> array);
+unsigned long exercise149(vector<long long> array){
+//    exercise 139 duplicated
+    return exercise139(array);
+}
+
+double exercise150(vector<double> array){
+    double max_negative = -10000000;
+    int index = -1;
+    for(int i =0 ;i<array.size();i++){
+        if (array[i] < 0 && array[i]>max_negative){
+            max_negative = array[i];
+            index = i;
+        }
+    }
+    if(index!=-1){
+        return max_negative;
+    }
+    return 0;
+}
