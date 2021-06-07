@@ -161,3 +161,71 @@ double exercise140(vector<double> array) {
     }
     return -1;
 }
+
+
+int exercise141(vector<double> array) {
+    int min_positive = 100000000;
+    int index = -1;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] > 0 && array[i] < min_positive) {
+            min_positive = array[i];
+            index = i;
+        }
+    }
+    if (index != -1) {
+        return min_positive;
+    }
+    return -1;
+}
+
+int exercise142(vector<int> array) {
+    int min_value = 100000000;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] < min_value) {
+            min_value = array[i];
+        }
+    }
+    return min_value;
+}
+
+int exercise143(vector<int> array) {
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] % 2 == 0) {
+            return array[i];
+        }
+    }
+    return -1;
+}
+
+int exercise144(vector<int> array) {
+//
+    for (int i = 0; i < array[i]; i++) {
+        for (int j = 2; j < sqrt(i); j++) {
+            if (i % j == 0) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+unsigned long exercise145(vector<long long> array) {
+//    exercise 139 semi-duplicated
+    vector<long long> reverse_array;
+    for (unsigned long i = array.size() - 1; i > -1; i++) {
+        reverse_array.push_back(array[i]);
+    }
+    return exercise139(reverse_array);
+}
+
+double exercise146(vector<double> array) {
+for(int i = 0)
+}
+
+double exercise147(vector<double> array);
+
+int exercise148(vector<int> array);
+
+int exercise149(vector<int> array);
+
+double exercise150(vector<double> array);

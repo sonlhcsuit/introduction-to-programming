@@ -39,3 +39,23 @@ int exercise138(vector<int> array);
 unsigned long exercise139(vector<long long> array);
 
 double exercise140(vector<double> array);
+
+int exercise141(vector<double> array);
+
+int exercise142(vector<int> array);
+
+int exercise143(vector<int> array);
+
+int exercise144(vector<int> array);
+
+unsigned long exercise145(vector<long long> array);
+
+double exercise146(vector<double> array);
+
+double exercise147(vector<double> array);
+
+int exercise148(vector<int> array);
+
+int exercise149(vector<int> array);
+
+double exercise150(vector<double> array);

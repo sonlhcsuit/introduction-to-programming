@@ -3,6 +3,7 @@
 #include <cmath>
 #include "section-1/section-1.h"
 #include "section-2/section-2.h"
+#include "section-5/section-5.h"
 
 using namespace std;
 
