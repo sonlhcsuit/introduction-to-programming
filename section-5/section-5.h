@@ -74,7 +74,7 @@ double exercise156(vector<double> array,double x);
 
 string exercise157(vector<double> array);
 
-double exercise158(vector<double> array);
+string exercise158(vector<double> array);
 
 double exercise159(vector<double> array);
 

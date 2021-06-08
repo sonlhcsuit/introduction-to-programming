@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <algorithm>
 #include "../section-1/section-1.h"
@@ -250,43 +251,136 @@ int exercise148(vector<int> array) {
     return -1;
 }
 
-unsigned long exercise149(vector<long long> array){
+unsigned long exercise149(vector<long long> array) {
 //    exercise 139 duplicated
     return exercise139(array);
 }
 
-double exercise150(vector<double> array){
+double exercise150(vector<double> array) {
     double max_negative = -10000000;
     int index = -1;
-    for(int i =0 ;i<array.size();i++){
-        if (array[i] < 0 && array[i]>max_negative){
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] < 0 && array[i] > max_negative) {
             max_negative = array[i];
             index = i;
         }
     }
-    if(index!=-1){
+    if (index != -1) {
         return max_negative;
     }
     return 0;
 }
 
 
-int exercise151(vector<int> array);
+int exercise151(vector<int> array) {
+    int max_prime = 0;
+    for (int i = 0; i < array.size(); i++) {
+        for (int j = 2; j < sqrt(array[i]); j++) {
+            if (array[i] % j == 0) {
+                max_prime = (max_prime < array[i]) ? array[i] : max_prime;
+            }
+        }
+    }
+    return max_prime;
+}
 
-int exercise152(vector<long long> array);
+int exercise152(vector<long long> array) {
+//
+    long long min_perfect = 1000000000000000;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] == 6 || array[i] == 28 ||
+            array[i] == 496 || array[i] == 8128 ||
+            array[i] == 33550336 || array[i] == 8589869056 ||
+            array[i] == 137438691328 || array[i] == 2305843008139952128) {
+            min_perfect = (min_perfect > array[i]) ? array[i] : min_perfect;
+        }
+    }
+    return min_perfect;
+}
 
-int exercise153(vector<int> array);
+int exercise153(vector<int> array) {
+    int min_even = 100000000;
+    bool flag = false;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] % 2 == 0) {
+            min_even = (min_even > array[i]) ? array[i] : min_even;
+            flag = true;
+        }
+    }
+    if (!flag) {
+        return -1;
+    }
+    return min_even;
+}
 
-int exercise154(vector<double> array);
+int exercise154(vector<double> array) {
+    double max_negative = -100000000;
+    int index = -1;
+    bool flag = false;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] < 0 && array[i] > max_negative) {
+            max_negative = array[i];
+        }
+    }
+    return index;
+}
 
-double exercise155(vector<double> array, double x);
+double exercise155(vector<double> array, double x) {
+    double max_distance = -1;
+    double value = 0;
+    for (int i = 0; i < array.size(); i++) {
+        if (max_distance < abs(array[i] - x)) {
+            max_distance = abs(array[i] - x);
+            value = array[i];
+        }
+    }
+    return value;
+}
 
-double exercise156(vector<double> array,double x);
+double exercise156(vector<double> array, double x) {
+    double min_distance = 100000000;
+    double value = 0;
+    for (int i = 0; i < array.size(); i++) {
+        if (min_distance > abs(array[i] - x)) {
+            min_distance = abs(array[i] - x);
+            value = array[i];
+        }
+    }
+    return value;
+}
 
-string exercise157(vector<double> array);
+string exercise157(vector<double> array) {
+    double a = 1000000;
+    double b = -1000000;
+    for (double element:array) {
+        a = min(a, element);
+        b = max(b, element);
+    }
+    return "[ " + to_string(a) + ", " + to_string(b) + " ]";
+}
 
-double exercise158(vector<double> array);
+string exercise158(vector<double> array) {
+    double x = -10000000;
+    for (double element:array) {
+        x = max(x, element);
+    }
+    return "[ " + to_string(-x) + ", " + to_string(x) + " ]";
+}
 
-double exercise159(vector<double> array);
+double exercise159(vector<double> array) {
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] > 2003) {
+            return array[i];
+        }
+    }
+    return 0;
+}
 
-double exercise160(vector<double> array);
+double exercise160(vector<double> array) {
+    for (int i = array.size() - 1; i > -1; i--) {
+        if (array[i] < 0 && array[i] > -1) {
+            return array[i];
+        }
+    }
+    return 0;
+}
