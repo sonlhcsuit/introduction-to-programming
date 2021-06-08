@@ -19,6 +19,7 @@ double exercise122(vector<double> array) {
     return max_value;
 }
 
+
 int exercise123(vector<int> array) {
     double min_value = 1000000000;
     int min_index = -1;
@@ -268,3 +269,24 @@ double exercise150(vector<double> array){
     }
     return 0;
 }
+
+
+int exercise151(vector<int> array);
+
+int exercise152(vector<long long> array);
+
+int exercise153(vector<int> array);
+
+int exercise154(vector<double> array);
+
+double exercise155(vector<double> array, double x);
+
+double exercise156(vector<double> array,double x);
+
+string exercise157(vector<double> array);
+
+double exercise158(vector<double> array);
+
+double exercise159(vector<double> array);
+
+double exercise160(vector<double> array);
