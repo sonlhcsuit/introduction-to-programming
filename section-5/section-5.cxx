@@ -384,3 +384,8 @@ double exercise160(vector<double> array) {
     }
     return 0;
 }
+
+double exercise161(const vector<double>& array,int x,int t){
+
+
+}

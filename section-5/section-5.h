@@ -79,3 +79,16 @@ string exercise158(vector<double> array);
 double exercise159(vector<double> array);
 
 double exercise160(vector<double> array);
+
+double exercise161(vector<double> array);
+
+double exercise162(vector<double> array);
+
+double exercise163(vector<double> array);
+double exercise164(vector<double> array);
+double exercise165(vector<double> array);
+double exercise166(vector<double> array);
+double exercise167(vector<double> array);
+double exercise168(vector<double> array);
+double exercise169(vector<double> array);
+double exercise170(vector<double> array);
