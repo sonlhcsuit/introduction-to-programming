@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <string>
 #include <algorithm>
+#include <cmath>
 #include "../section-1/section-1.h"
 #include "../section-2/section-2.h"
 
@@ -385,7 +386,169 @@ double exercise160(vector<double> array) {
     return 0;
 }
 
-double exercise161(const vector<double>& array,int x,int t){
+double exercise161(const vector<double> &array, int x, int y) {
+    for (double i : array) {
+        if (i > x && i < y) {
+            return i;
+        }
+    }
+    return x;
+}
+
+int exercise162(const vector<double> &array) {
+    for (int i = 1; i < array.size() - 1; i++) {
+        if (array[i - 1] * array[i + 1] - array[i] < 1e-9) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int exercise163(const vector<int> &array) {
+    for (int i : array) {
+        if (sqrtl(i) * sqrt(i) - i > 1e-9) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+bool is_palindrome(int x) {
+    string s = to_string(x);
+    string t = to_string(x);
+    return s == t;
+}
+
+int exercise164(const vector<int> &array) {
+    for (int i : array) {
+        if (is_palindrome(i)) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int exercise165(const vector<int> &array) {
+    for (int i : array) {
+        int j = i;
+        while (j % 10 > 10) {
+            j = j / 10;
+        }
+        if (j % 2 == 1) {
+            return i;
+        }
+    }
+    return 0;
+}
+
+bool is_power_of_2(int i) {
+    while (i != 0) {
+        if (i % 2 != 0) {
+            return false;
+        }
+        i = i / 2;
+    }
+    return true;
+}
+
+int exercise166(const vector<int> &array) {
+    for (int i : array) {
+        if (is_power_of_2(i)) {
+            return i;
+        }
+    }
+    return 0;
+}
 
 
+bool is_all_digit_odd(int i) {
+    while (i != 0) {
+        if ((i % 10) % 2 == 0) {
+            return false;
+        }
+        i = i / 10;
+    }
+    return true;
+}
+
+int exercise167(const vector<int> &array) {
+    int m = 0;
+    for (int i : array) {
+        if (is_all_digit_odd(i)) {
+            if (i > m) {
+                m = i;
+            }
+        }
+    }
+    return m;
+}
+
+bool is_power_of_5(int i) {
+    while (i != 0) {
+        if (i % 5 != 0) {
+            return false;
+        }
+        i = i / 5;
+    }
+    return true;
+}
+
+
+int exercise168(const vector<int> &array) {
+    int m = 0;
+    for (int i : array) {
+        if (is_power_of_5(i)) {
+            if (i > m) {
+                m = i;
+            }
+        }
+    }
+    return m;
+}
+
+
+int exercise169(const vector<int> &array) {
+    int min_odd = 1e9;
+    for (int i :array) {
+        if (i % 2 == 1 and i < min_odd) {
+            min_odd = i;
+        }
+    }
+    return min_odd - 1;
+}
+
+bool is_prime(int x) {
+    if (x < 2) {
+        return false;
+    }
+    if (x < 8) {
+        if (x == 2 or x == 3 or x == 5 or x == 7) {
+            return true;
+        }
+    } else {
+        for (int i = 8; i < sqrt(x); i++) {
+            if (x % i == 0) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+int exercise170(const vector<int> &array) {
+    int max_num = -1e9;
+    for (int i :array) {
+        if (i > max_num) {
+            max_num = i;
+        }
+    }
+
+    int i = max_num;
+    while (max_num < 1e9) {
+        if (is_prime(i)) {
+            return i;
+        }
+    }
+    return -1;
 }

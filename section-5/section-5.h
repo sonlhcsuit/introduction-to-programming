@@ -70,7 +70,7 @@ int exercise154(vector<double> array);
 
 double exercise155(vector<double> array, double x);
 
-double exercise156(vector<double> array,double x);
+double exercise156(vector<double> array, double x);
 
 string exercise157(vector<double> array);
 
@@ -80,15 +80,22 @@ double exercise159(vector<double> array);
 
 double exercise160(vector<double> array);
 
-double exercise161(vector<double> array);
+double exercise161(const vector<double> &array, int x, int y);
 
-double exercise162(vector<double> array);
+int exercise162(const vector<double> &array);
 
-double exercise163(vector<double> array);
-double exercise164(vector<double> array);
-double exercise165(vector<double> array);
-double exercise166(vector<double> array);
-double exercise167(vector<double> array);
-double exercise168(vector<double> array);
-double exercise169(vector<double> array);
-double exercise170(vector<double> array);
+int exercise163(const vector<int> &array);
+
+int exercise164(const vector<int> &array);
+
+int exercise165(const vector<int> &array);
+
+int exercise166(const vector<int> &array);
+
+int exercise167(const vector<int> &array);
+
+int exercise168(const vector<int> &array);
+
+int exercise169(const vector<int> &array);
+
+int exercise170(const vector<int> &array);
