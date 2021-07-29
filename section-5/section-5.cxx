@@ -864,7 +864,7 @@ vector<float> exercise191(const vector<float> &array) {
         result.push_back(array[0]);
     }
     if (array[array.size() - 1] > array[array.size() - 2]) {
-        result.push_back(array[array.size() - 1])
+        result.push_back(array[array.size() - 1]);
     }
     for (int i = 1; i < array.size() - 1; i++) {
         if (array[i] > array[i - 1] && array[i] > array[i + 1]) {
@@ -873,4 +873,70 @@ vector<float> exercise191(const vector<float> &array) {
     }
     return result;
 }
+
+bool is_first_digit_even(int number) {
+    while (number > 9) {
+        number = number / 10;
+    }
+
+    return number % 2 == 0;
+}
+
+vector<int> exercise192(const vector<int> &array) {
+    vector<int> result;
+
+    for (const auto item:array) {
+        if (is_first_digit_even(item)) {
+            result.push_back(item);
+        }
+    }
+    return result;
+}
+
+bool is_power_of_3(int number) {
+    while (number != 1) {
+        if (number % 3 == 0) {
+            number = number / 3;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+vector<int> exercise193(const vector<int> &array) {
+    vector<int> result;
+
+    for (const auto item:array) {
+        if (is_power_of_3(item)) {
+            result.push_back(item);
+        }
+    }
+    return result;
+}
+
+
+vector<pair<int,int>> exercise194(const vector<int> &array) {
+    int min_dist = 1000000000;
+    for (int i = 0; i < array.size(); i++) {
+        for (int j = 0; j < array.size(); j++) {
+            if (i != j && abs(array[i] - array[j]) < min_dist) {
+                min_dist = abs(array[i] - array[j]);
+            }
+        }
+    }
+    vector<pair<int,int>> result;
+    for (int i = 0; i < array.size(); i++) {
+        for (int j = 0; j < array.size(); j++) {
+            if (i != j && abs(array[i] - array[j]) == min_dist) {
+                pair<int,int> p;
+                p.first = array[i];
+                p.second = array[i];
+                result.push_back(p);
+            }
+        }
+    }
+    return result;
+}
+
 

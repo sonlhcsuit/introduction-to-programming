@@ -143,3 +143,11 @@ vector<int> exercise188(const vector<int> &array);
 vector<int> exercise189(const vector<int> &array);
 
 vector<int> exercise190(const vector<int> &array);
+
+
+
+
+
+
+
+vector<int> exercise193(const vector<int> &array) ;
