@@ -916,7 +916,7 @@ vector<int> exercise193(const vector<int> &array) {
 }
 
 
-vector<pair<int,int>> exercise194(const vector<int> &array) {
+vector<pair<int, int>> exercise194(const vector<int> &array) {
     int min_dist = 1000000000;
     for (int i = 0; i < array.size(); i++) {
         for (int j = 0; j < array.size(); j++) {
@@ -925,11 +925,11 @@ vector<pair<int,int>> exercise194(const vector<int> &array) {
             }
         }
     }
-    vector<pair<int,int>> result;
+    vector<pair<int, int>> result;
     for (int i = 0; i < array.size(); i++) {
         for (int j = 0; j < array.size(); j++) {
             if (i != j && abs(array[i] - array[j]) == min_dist) {
-                pair<int,int> p;
+                pair<int, int> p;
                 p.first = array[i];
                 p.second = array[i];
                 result.push_back(p);
@@ -940,3 +940,26 @@ vector<pair<int,int>> exercise194(const vector<int> &array) {
 }
 
 
+vector<pair<int, pair<int, int>>> exercise195(const vector<int> &array) {
+    vector<pair<int, pair<int, int>>> result;
+    for (int i = 0; i < array.size(); i++) {
+        for (int j = 0; j < array.size(); j++) {
+            for (int k = 0; k < array.size(); k++) {
+                if (i != j && j != k && i != k) {
+                    if (array[i] == array[j] + array[k]) {
+                        pair<int, pair<int, int>> p;
+                        p.first = array[i];
+                        p.second.first = array[j];
+                        p.second.first = array[k];
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
+
+
+vector<float> exercise196(const vector<float> &array) {
+    return exercise176(array);
+}
