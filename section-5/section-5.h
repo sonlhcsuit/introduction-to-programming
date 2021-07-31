@@ -144,10 +144,22 @@ vector<int> exercise189(const vector<int> &array);
 
 vector<int> exercise190(const vector<int> &array);
 
+vector<float> exercise191(const vector<float> &array);
 
+vector<int> exercise192(const vector<int> &array);
 
+vector<int> exercise193(const vector<int> &array);
 
+vector<pair<int, int>> exercise194(const vector<int> &array);
 
+vector<pair<int, pair<int, int>>> exercise195(const vector<int> &array);
 
+vector<float> exercise196(const vector<float> &array);
 
-vector<int> exercise193(const vector<int> &array) ;
+vector<int> exercise197(const vector<int> &array);
+
+vector<int> exercise198(const vector<int> &array);
+
+vector<int> exercise199(const vector<int> &array);
+
+int exercise200(const vector<int> &array);

@@ -963,3 +963,28 @@ vector<pair<int, pair<int, int>>> exercise195(const vector<int> &array) {
 vector<float> exercise196(const vector<float> &array) {
     return exercise176(array);
 }
+
+
+vector<int> exercise197(const vector<int> &array) {
+    vector<int> result;
+    for (const auto item:array) {
+        if (!is_first_digit_even(item)) {
+            result.push_back(item);
+        }
+    }
+}
+
+vector<int> exercise198(const vector<int> &array){
+    return exercise183(array);
+}
+
+vector<int> exercise199(const vector<int> &array){
+    return exercise189(array);
+}
+int exercise200(const vector<int> &array){
+    int sum =0;
+    for (const auto item:array){
+        sum+=item;
+    }
+    return sum;
+}
