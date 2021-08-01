@@ -1021,10 +1021,26 @@ int exercise217(const vector<int> &array) {
     }
     return ct;
 }
-int exercise(const vector<int> &array){
-    int ct;
-    for(const auto item:array){
-        ct = ct + (is_palindrome(item)?1:0);
+
+int exercise218(const vector<int> &array) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (is_palindrome(item) ? 1 : 0);
+    }
+    return ct;
+}
+
+int exercise219(const vector<float> &array, float x) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (abs(item - x) < 1e-6 ? 1 : 0);
+    }
+}
+
+int exercise220(const vector<int> &array) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (item % 10 == 5 ? 1 : 0);
     }
     return ct;
 }
