@@ -3,7 +3,9 @@
 //
 
 #include "helper.h"
-
+#include <cmath>
+#include <string>
+using namespace std;
 bool is_palindrome(int x) {
     string s = to_string(x);
     string t = to_string(x);
