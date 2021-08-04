@@ -1491,3 +1491,181 @@ bool exercise260(vector<int> a, vector<int> b) {
   }
   return true;
 }
+
+vector<float> exercise261(vector<float> array) {
+
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] <= 0) {
+      continue;
+    }
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[i] <= 1) {
+        continue;
+      }
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+  return array;
+}
+
+vector<int> exercise262(vector<int> array) {
+  // sort by odd
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] % 2 == 0) {
+      continue;
+    }
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[i] % 2 == 0) {
+        continue;
+      }
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+  // sort by even
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] % 2 == 1) {
+      continue;
+    }
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[i] % 2 == 1) {
+        continue;
+      }
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+  return array;
+}
+
+vector<int> exercise263(vector<int> array) {
+  // sort negative descending
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] > 0)
+      continue;
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[i] > 0)
+        continue;
+
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+  // sort positive ascending
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] < 0)
+      continue;
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[i] < 0)
+        continue;
+
+      if (array[j] < array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+  return array;
+}
+
+vector<float> exercise264(vector<float> a, vector<float> b) {
+  vector<float> result;
+  int i = 0;
+  int j = 0;
+  while (i != a.size() - 1 || j != b.size() - 1) {
+    if (i == a.size() - 1 && j < b.size() - 1) {
+      result.push_back(b[j]);
+      j++;
+    } else if (j == b.size() - 1 && i < a.size()) {
+      result.push_back(a[i]);
+      i++;
+    } else {
+      if (a[i] > b[j]) {
+        result.push_back(b[j]);
+        j++;
+      } else {
+        result.push_back(a[i]);
+        i++;
+      }
+    }
+  }
+  return result;
+}
+
+
+vector<float> exercise265(vector<float> a, vector<float> b) {
+  vector<float> result;
+  int i = a.size() -1;
+  int j = b.size() -1 ;
+  while ( i != 0 || j!=0) {
+    if (i == 0  && j > 0) {
+      result.push_back(b[j]);
+      j--;
+    } else if (j == 0 && i >0) {
+      result.push_back(a[i]);
+      i--;
+    } else {
+      if (a[i] > b[j]) {
+        result.push_back(a[i]);
+        i--;
+      } else {
+        result.push_back(b[j]);
+        j--;
+      }
+    }
+  }
+  return result;
+}
