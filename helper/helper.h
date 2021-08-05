@@ -33,3 +33,5 @@ int first_digit(int n) ;
 bool is_perfect(int x);
 
 void quicksort(vector<float> &array,int low,int high);
+
+bool is_square(int i);

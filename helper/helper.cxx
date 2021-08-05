@@ -166,3 +166,9 @@ void quicksort(vector<float> &array, int low, int high) {
   quicksort(array, low, small - 1);
   quicksort(array, small + 1, high);
 }
+
+bool is_square(int i){
+	float t = i/1.0;
+	int t2 = (int) t;
+	return t*t == i;
+}

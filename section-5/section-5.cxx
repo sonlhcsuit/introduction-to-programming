@@ -1723,7 +1723,7 @@ void exercise272(vector<float> &array) {
 }
 
 void exercise273(vector<float> &array) {
-  vector<float> negative_index;
+  vector<int> negative_index;
   for (int i = 0; i < array.size(); i++) {
     if (array[i] > 0) {
       negative_index.push_back(i);
@@ -1736,7 +1736,7 @@ void exercise273(vector<float> &array) {
 
 
 void exercise274(vector<int> &array) {
-  vector<float> negative_index;
+  vector<int> negative_index;
   for (int i = 0; i < array.size(); i++) {
     if (array[i]%2 == 0) {
       negative_index.push_back(i);
@@ -1749,13 +1749,59 @@ void exercise274(vector<int> &array) {
 
 
 void exercise275(vector<int> &array) {
-  vector<float> negative_index;
+  vector<int> negative_index;
   for (int i = 0; i < array.size(); i++) {
-    if (array[i] > 0) {
+    if (is_square(array[i])) {
       negative_index.push_back(i);
     }
   }
   for (int i = 0; i < negative_index.size(); i++) {
     array.erase(array.begin() + (negative_index[i] - i));
   }
+}
+
+void exercise276(vector<float> &array,float x) {
+  vector<int> negative_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (abs(array[i]-x)<1e-9) {
+      negative_index.push_back(i);
+    }
+  }
+  for (int i = 0; i < negative_index.size(); i++) {
+    array.erase(array.begin() + (negative_index[i] - i));
+  }
+}
+
+void exercise277(vector<int> &array) {
+  vector<int> negative_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (is_prime(array[i])) {
+      negative_index.push_back(i);
+    }
+  }
+  for (int i = 0; i < negative_index.size(); i++) {
+    array.erase(array.begin() + (negative_index[i] - i));
+  }
+}
+
+
+vector<float> exercise278(vector<float> &array) {
+	unordered_set<float> s(array.begin(),array.end());
+	vector<float>result(s.begin(),s.end());
+	return result;
+}
+
+// 279 similar to 278
+
+vector<float> exercise280(const vector<float> &array){
+	vector<float> result;
+	for (const auto item: array){
+		if (item == 1)
+			result.push_back(1);
+	}
+	for (const auto item: array){
+		if (item != 1)
+			result.push_back(item);
+	}
+	return result;
 }
