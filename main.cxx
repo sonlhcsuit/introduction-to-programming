@@ -9,30 +9,13 @@ using namespace std;
 
 int main(int argc, char **argv) {
     cout << "Hello World\n";
-    if (argc == 1 + 1) {
+    vector<float> v = {4444.0, 2.0, 8.0};
+    vector<pair<float, float>> result = exercise174(v);
 
-
-
-//        vector<double> res = exercise066(stoi(argv[1]), stoi(argv[2]), stoi(argv[3]));
-//        for (int i = 0; i < res.size(); i++) {
-//            cout << res[i] << " ";
-//        }
-//        cout << e
-//        exercise119(stoi(argv[1]));
-//        cout << exercise083(stod(argv[1]), stod(argv[2]));
-//        cout << exercise104(stod(argv[1]), stod(argv[2]), stod(argv[3]));
-//        exercise098
-        vector<int> v = {1, 2, 3, 4, 5, 6, 7, -1, -3};
-        vector<int> res = exercise132(v);
-
-        for (int i = 0; i < res.size(); i++) {
-            cout << res[i] << " ";
-        }
-    } else {
-//        cout << (10);
-
-
+    for (pair<float, float> &item : result) {
+        cout << item.first << " - " << item.second << "\n";
     }
+
 
     return 1;
 }

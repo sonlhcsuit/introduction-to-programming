@@ -99,3 +99,17 @@ int exercise168(const vector<int> &array);
 int exercise169(const vector<int> &array);
 
 int exercise170(const vector<int> &array);
+
+int gcd(int a,int b);
+
+int exercise171(const vector<int> &array);
+int exercise172(const vector<int> &array);
+int exercise173(const vector<int> &array);
+vector<pair<float,float>>  exercise174(const vector<float> &array);
+pair<float,float> exercise175(const vector<float> &array);
+
+vector<float> exercise176(const vector<float> &array);
+vector<float> exercise177(const vector<float> &array,float x,float y);
+int exercise178(const vector<int> &array);
+int exercise179(const vector<int> &array);
+int exercise180(const vector<int> &array);

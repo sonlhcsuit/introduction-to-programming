@@ -70,6 +70,7 @@ vector<double> exercise127(vector<double> array) {
 }
 
 // 128 129 130 131 are empty because too easy
+
 vector<int> exercise132(vector<int> array) {
     vector<int> t;
     copy_if(array.begin(), array.end(), back_inserter(t), [](int i) { return i >= 0; });
@@ -551,4 +552,132 @@ int exercise170(const vector<int> &array) {
         }
     }
     return -1;
+}
+
+int gcd(int a, int b) {
+    int temp = 0;
+    while (a != 0) {
+        temp = a;
+        a = b % a;
+        b = temp;
+    }
+    return b;
+}
+
+int exercise171(const vector<int> &array) {
+    int gcd_value = array[0];
+    for (const auto item:array) {
+        gcd_value = gcd(gcd_value, item);
+    }
+    return gcd_value;
+}
+
+int exercise172(const vector<int> &array) {
+    int gcd_value = array[0];
+    int product = 1;
+    for (const auto item:array) {
+        product = product * item;
+        gcd_value = gcd(gcd_value, item);
+    }
+    return product / gcd_value;
+}
+
+int exercise173(const vector<int> &array) {
+    int *arr = new int[10];
+    for (int i = 0; i < 10; i++) {
+        arr[i] = 0;
+    }
+    for (const auto item:array) {
+        string str = to_string(item);
+        for (int i = 0; i < str.size(); i++) {
+            unsigned int char_code = (int) str[i] - 48;
+            arr[char_code] = arr[char_code] + 1;
+        }
+    }
+    int m = 0;
+    int m_value = 0;
+    for (int i = 0; i < 10; i++) {
+        if (arr[i] > m_value) {
+            m_value = arr[i];
+            m = i;
+        }
+    }
+    return m;
+}
+
+vector<pair<float, float>> exercise174(const vector<float> &array) {
+
+    vector<pair<float, float>> result;
+    for (int i = 0; i < array.size(); i++) {
+        for (int j = 0; j < array.size(); j++) {
+            if (array[i] < array[j]) {
+                pair<float, float> p;
+                p.first = array[i];
+                p.second = array[j];
+                result.push_back(p);
+            }
+        }
+    }
+    return result;
+}
+
+pair<float, float> exercise175(const vector<float> &array) {
+
+    vector<pair<float, float>> result = exercise174(array);
+    pair<float, float> p;
+    int min_size = 1000000000;
+    for (pair<float, float> item:result) {
+        int diff = abs(item.first - item.second);
+        if (diff < min_size) {
+            p.first = item.first;
+            p.second = item.second;
+        }
+    }
+    return p;
+}
+
+vector<float> exercise176(const vector<float> &array) {
+    vector<float> result;
+    for (const float item:array) {
+        if (item < 0) {
+            result.push_back(item);
+        }
+    }
+    return result;
+}
+
+
+vector<float> exercise177(const vector<float> &array, float x, float y) {
+    vector<float> result;
+    for (const float item:array) {
+        if (item > x && item < y) {
+            result.push_back(item);
+        }
+    }
+    return result;
+}
+
+vector<int> exercise178(const vector<int> &array, int x, int y) {
+    vector<int> result;
+    for (const int item:array) {
+        if (item > x && item < y && item % 2 == 0) {
+            result.push_back(item);
+        }
+    }
+    return result;
+}
+// lower than zero (-inf ... -1 )
+
+vector<float> exercise179(const vector<float> &array) {
+    return exercise176(array);
+}
+
+vector<float> exercise180(const vector<float> &array) {
+    vector<float> result;
+    for (int i = 1 ;i <array.size()-1; i++) {
+        if (array[i] < abs(array[i+1]) && array[i] > array[i-1]) {
+            result.push_back(array[i]);
+        }
+    }
+    return result;
 }
