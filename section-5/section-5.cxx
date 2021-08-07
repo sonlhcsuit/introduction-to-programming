@@ -674,9 +674,185 @@ vector<float> exercise179(const vector<float> &array) {
 
 vector<float> exercise180(const vector<float> &array) {
     vector<float> result;
-    for (int i = 1 ;i <array.size()-1; i++) {
-        if (array[i] < abs(array[i+1]) && array[i] > array[i-1]) {
+    for (int i = 1; i < array.size() - 1; i++) {
+        if (array[i] < abs(array[i + 1]) && array[i] > array[i - 1]) {
             result.push_back(array[i]);
+        }
+    }
+    return result;
+}
+
+vector<int> exercise181(const vector<int> &array) {
+    vector<int> result;
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] % 2 == 0) {
+            if (i > 0 && array[i - 1] % 2 == 0) {
+                result.push_back(array[i]);
+            } else if (i < array.size() - 1 && array[i + 1]) {
+                result.push_back(array[i]);
+            }
+        }
+    }
+    return result;
+}
+
+vector<float> exercise182(const vector<float> &array) {
+    vector<float> result;
+    for (int i = 0; i < array.size(); i++) {
+        if (i > 0 && array[i] * array[i - 1] < 0) {
+            result.push_back(array[i]);
+        } else if (i < array.size() - 1 && array[i] * array[i + 1] < 0) {
+            result.push_back(array[i]);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise183(const vector<int> &array) {
+    vector<int> result;
+    int max_value = -1000000000;
+    for (const auto item:array) {
+        if (item > max_value) {
+            max_value = item;
+        }
+    }
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] == max_value) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise184(const vector<int> &array) {
+    vector<int> result;
+    for (int i = 0; i < array.size(); i++) {
+        double sqrt_v = sqrt(array[i]);
+        if (array[i] == 2 || array[i] == 3 || array[i] == 5 || array[i] == 7) {
+            result.push_back(i);
+        } else {
+            bool flag = true;
+            for (int j = 3; j < sqrt_v; j++) {
+                if (array[i] % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                result.push_back(i);
+            }
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise185(const vector<int> &array) {
+    vector<int> result;
+    for (int i = 0; i < array.size(); i++) {
+        int v = (int) sqrt(array[i]);
+        if (v * v == array[i]) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise186(const vector<int> &array) {
+    vector<int> result;
+    int first_negative = 10000;
+    for (const auto item: array) {
+        if (item < 0) {
+            first_negative = item;
+            break;
+        }
+    }
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] == first_negative) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise187(const vector<int> &array) {
+    vector<int> result;
+    int smallest_positive = 100000000;
+    for (const auto item: array) {
+        if (item > 0 && smallest_positive > item) {
+            smallest_positive = item;
+        }
+    }
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] == smallest_positive) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise188(const vector<int> &array) {
+    vector<int> result;
+    int greatest_even = -100000000;
+    for (const auto item: array) {
+        if (item % 2 == 0 && greatest_even < item) {
+            greatest_even = item;
+        }
+    }
+    for (int i = 0; i < array.size(); i++) {
+        if (array[i] == greatest_even) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+bool first_digit_prime_odd(int number) {
+    bool flag = true;
+    if (number == 2) return false;
+    if (number == 3 || number == 5 || number == 7) return true;
+    for (int i = 3; i < sqrt(number); i++) {
+        if (number % i == 0) {
+            flag = false;
+            break;
+        }
+    }
+    if (flag) {
+        int f_digit = 0;
+        while (number != 0) {
+            f_digit = number % 10;
+            number = number / 10;
+        }
+        if (f_digit % 2 == 0 ){
+            flag = false;
+        }
+    }
+
+    return flag;
+}
+
+vector<int> exercise189(const vector<int> &array) {
+    vector<int> result;
+
+    for (int i = 0; i < array.size(); i++) {
+        if (first_digit_prime_odd(array[i])) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+
+
+vector<int> exercise190(const vector<int> &array) {
+    vector<int> result;
+    for (int i = 0; i < array.size(); i++) {
+        if (is_all_digit_odd(array[i])) {
+            result.push_back(i);
         }
     }
     return result;

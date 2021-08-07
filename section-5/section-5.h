@@ -110,6 +110,7 @@ pair<float,float> exercise175(const vector<float> &array);
 
 vector<float> exercise176(const vector<float> &array);
 vector<float> exercise177(const vector<float> &array,float x,float y);
-int exercise178(const vector<int> &array);
-int exercise179(const vector<int> &array);
-int exercise180(const vector<int> &array);
+vector<int> exercise178(const vector<int> &array, int x, int y);
+vector<float> exercise179(const vector<float> &array);
+vector<float> exercise180(const vector<float> &array);
+
