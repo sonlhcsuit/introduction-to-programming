@@ -1056,3 +1056,37 @@ float exercise207(const vector<float> &array) {
     return sum;
 }
 
+int exercise208(const vector<int> &array) {
+    int sum = 0;
+    for (int i = 0; i < array.size() - 1; i++) {
+        int result = array[i] / 1.0;
+        if (result * result == array[i]) {
+            sum = sum + array[i];
+        }
+    }
+    return sum;
+}
+
+
+int exercise209(const vector<int> &array) {
+    int sum = 0;
+    for (int i = 0; i < array.size(); i++) {
+        sum = sum + (is_palindrome(array[i]) ? array[i] : 0);
+
+    }
+    return sum;
+}
+
+
+float exercise210(const vector<int> &array) {
+    int sum = 0;
+    int ct = 0;
+    for (const auto item:array) {
+        if (is_prime(item)) {
+            sum = sum + item;
+            ct++;
+        }
+
+    }
+    return sum * 1.0 / ct;
+}
