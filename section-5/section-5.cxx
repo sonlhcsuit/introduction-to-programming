@@ -828,7 +828,7 @@ bool first_digit_prime_odd(int number) {
             f_digit = number % 10;
             number = number / 10;
         }
-        if (f_digit % 2 == 0 ){
+        if (f_digit % 2 == 0) {
             flag = false;
         }
     }
@@ -857,3 +857,20 @@ vector<int> exercise190(const vector<int> &array) {
     }
     return result;
 }
+
+vector<float> exercise191(const vector<float> &array) {
+    vector<float> result;
+    if (array[0] > array[1]) {
+        result.push_back(array[0]);
+    }
+    if (array[array.size() - 1] > array[array.size() - 2]) {
+        result.push_back(array[array.size() - 1])
+    }
+    for (int i = 1; i < array.size() - 1; i++) {
+        if (array[i] > array[i - 1] && array[i] > array[i + 1]) {
+            result.push_back(array[i]);
+        }
+    }
+    return result;
+}
+

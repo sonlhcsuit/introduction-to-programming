@@ -100,17 +100,46 @@ int exercise169(const vector<int> &array);
 
 int exercise170(const vector<int> &array);
 
-int gcd(int a,int b);
+int gcd(int a, int b);
 
 int exercise171(const vector<int> &array);
+
 int exercise172(const vector<int> &array);
+
 int exercise173(const vector<int> &array);
-vector<pair<float,float>>  exercise174(const vector<float> &array);
-pair<float,float> exercise175(const vector<float> &array);
+
+vector<pair<float, float>> exercise174(const vector<float> &array);
+
+pair<float, float> exercise175(const vector<float> &array);
 
 vector<float> exercise176(const vector<float> &array);
-vector<float> exercise177(const vector<float> &array,float x,float y);
+
+vector<float> exercise177(const vector<float> &array, float x, float y);
+
 vector<int> exercise178(const vector<int> &array, int x, int y);
+
 vector<float> exercise179(const vector<float> &array);
+
 vector<float> exercise180(const vector<float> &array);
 
+
+vector<int> exercise181(const vector<int> &array);
+
+vector<float> exercise182(const vector<float> &array);
+
+
+vector<int> exercise183(const vector<int> &array);
+
+vector<int> exercise184(const vector<int> &array);
+
+vector<int> exercise185(const vector<int> &array);
+
+vector<int> exercise186(const vector<int> &array);
+
+vector<int> exercise187(const vector<int> &array);
+
+vector<int> exercise188(const vector<int> &array);
+
+vector<int> exercise189(const vector<int> &array);
+
+vector<int> exercise190(const vector<int> &array);
