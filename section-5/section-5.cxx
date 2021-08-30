@@ -974,17 +974,85 @@ vector<int> exercise197(const vector<int> &array) {
     }
 }
 
-vector<int> exercise198(const vector<int> &array){
+vector<int> exercise198(const vector<int> &array) {
     return exercise183(array);
 }
 
-vector<int> exercise199(const vector<int> &array){
+vector<int> exercise199(const vector<int> &array) {
     return exercise189(array);
 }
-int exercise200(const vector<int> &array){
-    int sum =0;
-    for (const auto item:array){
-        sum+=item;
+
+int exercise200(const vector<int> &array) {
+    int sum = 0;
+    for (const auto item:array) {
+        sum += item;
     }
     return sum;
 }
+
+float exercise201(const vector<float> &array) {
+    float sum = 0;
+    for (const auto item:array) {
+        sum = sum + ((item >= 0) ? item : 0);
+    }
+    return sum;
+}
+
+int first_digit(int n) {
+    n = abs(n);
+    while (n > 9) {
+        n = n / 10;
+    }
+    return n;
+}
+
+int exercise202(const vector<int> &array) {
+    int sum = 0;
+    for (const auto item:array) {
+        sum = sum + ((item % 2 == 1) ? item : 0);
+    }
+    return sum;
+}
+
+int exercise203(const vector<int> &array) {
+    int sum = 0;
+    for (const auto item:array) {
+        sum = sum + ((((item / 10) % 10) == 5) ? item : 0);
+    }
+    return sum;
+}
+
+float exercise204(const vector<float> &array) {
+    float sum = 0;
+    for (int i = 1; i < array.size(); i++) {
+        sum = sum + ((array[i] > array[i - 1]) ? array[i] : 0);
+    }
+    return sum;
+}
+
+float exercise205(const vector<float> &array) {
+    float sum = 0;
+    for (int i = 0; i < array.size() - 1; i++) {
+        sum = sum + ((abs(array[i]) > abs(array[i + 1])) ? array[i] : 0);
+
+    }
+}
+
+float exercise206(const vector<float> &array) {
+    float sum = 0;
+    for (int i = 1; i < array.size() - 1; i++) {
+        sum = sum + ((array[i] > array[i - 1] && array[i] > array[i + 1]) ? array[i] : 0);
+
+    }
+    return sum;
+}
+
+float exercise207(const vector<float> &array) {
+    float sum = 0;
+    for (int i = 1; i < array.size() - 1; i++) {
+        sum = sum + (((array[i] > array[i - 1] && array[i] > array[i + 1]) or
+                      (array[i] < array[i - 1] && array[i] < array[i + 1])) ? array[i] : 0);
+    }
+    return sum;
+}
+
