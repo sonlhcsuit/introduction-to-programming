@@ -968,6 +968,63 @@ float exercise211(const vector<int> &array) {
     return sum * 1.0 / ct;
 }
 
-float exercise212(const vector<float> &array){
+double exercise212(const vector<float> &array) {
+    double sum = 0;
+    int ct = 0;
+    for (const auto item:array) {
+        sum = sum + (item > 0 ? item : 0);
+        ct = ct + (item > 0 ? 1 : 0);
+    }
+    return sum / ct;
+}
 
+double exercise213(const vector<float> &array, float x) {
+    double sum;
+    int ct = 0;
+    for (const auto item:array) {
+        sum = sum + (item > x ? item : 0);
+        ct = ct + (item > x ? 1 : 0);
+    }
+    return sum / ct;
+}
+
+double exercise214(const vector<float> &array) {
+    double product;
+    int ct;
+    for (const auto item:array) {
+        product = product * (item > 0 ? item : 1);
+        ct = ct + (item > 0 ? 1 : 0);
+    }
+    return product / ct;
+}
+
+double exercise215(const vector<float> &array) {
+    double sum = 0;
+    for (const auto item:array) {
+        sum = sum + abs(item);
+    }
+    return sum / array.size();
+}
+
+int exercise216(const vector<int> &array) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (item % 2 == 0 ? 1 : 0);
+    }
+    return ct;
+}
+
+int exercise217(const vector<int> &array) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (item % 7 == 0 ? 1 : 0);
+    }
+    return ct;
+}
+int exercise(const vector<int> &array){
+    int ct;
+    for(const auto item:array){
+        ct = ct + (is_palindrome(item)?1:0);
+    }
+    return ct;
 }
