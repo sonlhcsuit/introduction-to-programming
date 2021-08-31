@@ -10,17 +10,17 @@
 #include <cmath>
 #include "../section-1/section-1.h"
 #include "../section-2/section-2.h"
+#include "../helper/helper.h"
 
-double exercise122(vector<double> array) {
+double exercise122(const vector<double> &array) {
     double max_value = -1000000000;
-    for (int i = 0; i < array.size(); i++) {
-        if (max_value < array[i]) {
-            max_value = array[i];
+    for (const auto item:array) {
+        if (max_value < item) {
+            max_value = item;
         }
     }
     return max_value;
 }
-
 
 int exercise123(vector<int> array) {
     double min_value = 1000000000;
@@ -34,7 +34,7 @@ int exercise123(vector<int> array) {
     return min_index;
 }
 
-bool exercise124(vector<int> array) {
+bool exercise124(const vector<int> &array) {
     for (int i : array) {
         if (i < 2004 && i % 2 == 0) {
             return true;
@@ -89,22 +89,22 @@ vector<int> exercise133(vector<double> array) {
 
 }
 
-double exercise134(vector<double> array) {
+double exercise134(const vector<double> &array) {
     double max_value = -10000000;
-    for (int i = 0; i < array.size(); i++) {
-        max_value = max_value < array[i] ? array[i] : max_value;
+    for (const auto item:array) {
+        max_value = max_value < item ? item : max_value;
     }
     return max_value;
 }
 
-double exercise135(vector<double> array) {
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] > 0) return array[i];
+double exercise135(const vector<double> &array) {
+    for (const auto item:array) {
+        if (item > 0) return item;
     }
     return -1;
 }
 
-double exercise136(vector<double> array) {
+double exercise136(const vector<double> &array) {
     for (int i = array.size() - 1; i > -1; i--) {
         if ((int) (array[i]) % 2 == 0) return array[i];
     }
@@ -113,7 +113,7 @@ double exercise136(vector<double> array) {
 
 int exercise137(vector<double> array) {
     int index = -1;
-    int min_value = 100000000;
+    double min_value = 100000000;
     for (int i = 0; i < array.size(); i++) {
         if (min_value > array[i]) {
             min_value = array[i];
@@ -166,9 +166,8 @@ double exercise140(vector<double> array) {
     return -1;
 }
 
-
 int exercise141(vector<double> array) {
-    int min_positive = 100000000;
+    double min_positive = 100000000;
     int index = -1;
     for (int i = 0; i < array.size(); i++) {
         if (array[i] > 0 && array[i] < min_positive) {
@@ -177,25 +176,25 @@ int exercise141(vector<double> array) {
         }
     }
     if (index != -1) {
-        return min_positive;
+        return (int) min_positive;
     }
     return -1;
 }
 
-int exercise142(vector<int> array) {
+int exercise142(const vector<int> &array) {
     int min_value = 100000000;
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] < min_value) {
-            min_value = array[i];
+    for (const auto item:array) {
+        if (item < min_value) {
+            min_value = item;
         }
     }
     return min_value;
 }
 
-int exercise143(vector<int> array) {
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] % 2 == 0) {
-            return array[i];
+int exercise143(const vector<int> &array) {
+    for (const auto item :array) {
+        if (item % 2 == 0) {
+            return item;
         }
     }
     return -1;
@@ -222,10 +221,10 @@ unsigned long exercise145(vector<long long> array) {
     return exercise139(reverse_array);
 }
 
-double exercise146(vector<double> array) {
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] < 0) {
-            return array[i];
+double exercise146(const vector<double> &array) {
+    for (const auto item :array) {
+        if (item < 0) {
+            return item;
         }
     }
     return 1;
@@ -235,25 +234,24 @@ double exercise147(vector<double> array) {
     for (unsigned long i = array.size() - 1; i > -1; i--) {
         if (array[i] > 0) {
             return array[i];
-
         }
     }
     return -1;
 }
 
-int exercise148(vector<int> array) {
+int exercise148(const vector<int> &array) {
 //    ex144 semi-duplicated
     for (unsigned long i = array.size() - 1; i > -1; i--) {
         for (int j = 2; j < sqrt(i); j++) {
             if (i % j == 0) {
-                return i;
+                return (int) i;
             }
         }
     }
     return -1;
 }
 
-unsigned long exercise149(vector<long long> array) {
+unsigned long exercise149(const vector<long long> &array) {
 //    exercise 139 duplicated
     return exercise139(array);
 }
@@ -273,39 +271,38 @@ double exercise150(vector<double> array) {
     return 0;
 }
 
-
-int exercise151(vector<int> array) {
+int exercise151(const vector<int> &array) {
     int max_prime = 0;
-    for (int i = 0; i < array.size(); i++) {
-        for (int j = 2; j < sqrt(array[i]); j++) {
-            if (array[i] % j == 0) {
-                max_prime = (max_prime < array[i]) ? array[i] : max_prime;
+    for (const auto item:array) {
+        for (int j = 2; j < sqrt(item); j++) {
+            if (item % j == 0) {
+                max_prime = (max_prime < item) ? item : max_prime;
             }
         }
     }
     return max_prime;
 }
 
-int exercise152(vector<long long> array) {
+int exercise152(const vector<long long> &array) {
 //
     long long min_perfect = 1000000000000000;
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] == 6 || array[i] == 28 ||
-            array[i] == 496 || array[i] == 8128 ||
-            array[i] == 33550336 || array[i] == 8589869056 ||
-            array[i] == 137438691328 || array[i] == 2305843008139952128) {
-            min_perfect = (min_perfect > array[i]) ? array[i] : min_perfect;
+    for (const auto item:array) {
+        if (item == 6 || item == 28 ||
+            item == 496 || item == 8128 ||
+            item == 33550336 || item == 8589869056 ||
+            item == 137438691328 || item == 2305843008139952128) {
+            min_perfect = (min_perfect > item) ? item : min_perfect;
         }
     }
-    return min_perfect;
+    return (int) min_perfect;
 }
 
-int exercise153(vector<int> array) {
+int exercise153(const vector<int> &array) {
     int min_even = 100000000;
     bool flag = false;
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] % 2 == 0) {
-            min_even = (min_even > array[i]) ? array[i] : min_even;
+    for (const auto item:array) {
+        if (item % 2 == 0) {
+            min_even = (min_even > item) ? item : min_even;
             flag = true;
         }
     }
@@ -315,43 +312,44 @@ int exercise153(vector<int> array) {
     return min_even;
 }
 
-int exercise154(vector<double> array) {
+int exercise154(const vector<double> &array) {
     double max_negative = -100000000;
     int index = -1;
     bool flag = false;
     for (int i = 0; i < array.size(); i++) {
         if (array[i] < 0 && array[i] > max_negative) {
             max_negative = array[i];
+            index = i;
         }
     }
     return index;
 }
 
-double exercise155(vector<double> array, double x) {
+double exercise155(const vector<double> &array, double x) {
     double max_distance = -1;
     double value = 0;
-    for (int i = 0; i < array.size(); i++) {
-        if (max_distance < abs(array[i] - x)) {
-            max_distance = abs(array[i] - x);
-            value = array[i];
+    for (const auto item:array) {
+        if (max_distance < abs(item - x)) {
+            max_distance = abs(item - x);
+            value = item;
         }
     }
     return value;
 }
 
-double exercise156(vector<double> array, double x) {
+double exercise156(const vector<double> &array, double x) {
     double min_distance = 100000000;
     double value = 0;
-    for (int i = 0; i < array.size(); i++) {
-        if (min_distance > abs(array[i] - x)) {
-            min_distance = abs(array[i] - x);
-            value = array[i];
+    for (const auto item :array) {
+        if (min_distance > abs(item - x)) {
+            min_distance = abs(item - x);
+            value = item;
         }
     }
     return value;
 }
 
-string exercise157(vector<double> array) {
+string exercise157(const vector<double> &array) {
     double a = 1000000;
     double b = -1000000;
     for (double element:array) {
@@ -361,7 +359,7 @@ string exercise157(vector<double> array) {
     return "[ " + to_string(a) + ", " + to_string(b) + " ]";
 }
 
-string exercise158(vector<double> array) {
+string exercise158(const vector<double> &array) {
     double x = -10000000;
     for (double element:array) {
         x = max(x, element);
@@ -369,10 +367,10 @@ string exercise158(vector<double> array) {
     return "[ " + to_string(-x) + ", " + to_string(x) + " ]";
 }
 
-double exercise159(vector<double> array) {
-    for (int i = 0; i < array.size(); i++) {
-        if (array[i] > 2003) {
-            return array[i];
+double exercise159(const vector<double> &array) {
+    for (const auto item :array) {
+        if (item > 2003) {
+            return item;
         }
     }
     return 0;
@@ -414,11 +412,6 @@ int exercise163(const vector<int> &array) {
     return -1;
 }
 
-bool is_palindrome(int x) {
-    string s = to_string(x);
-    string t = to_string(x);
-    return s == t;
-}
 
 int exercise164(const vector<int> &array) {
     for (int i : array) {
@@ -442,16 +435,6 @@ int exercise165(const vector<int> &array) {
     return 0;
 }
 
-bool is_power_of_2(int i) {
-    while (i != 0) {
-        if (i % 2 != 0) {
-            return false;
-        }
-        i = i / 2;
-    }
-    return true;
-}
-
 int exercise166(const vector<int> &array) {
     for (int i : array) {
         if (is_power_of_2(i)) {
@@ -459,17 +442,6 @@ int exercise166(const vector<int> &array) {
         }
     }
     return 0;
-}
-
-
-bool is_all_digit_odd(int i) {
-    while (i != 0) {
-        if ((i % 10) % 2 == 0) {
-            return false;
-        }
-        i = i / 10;
-    }
-    return true;
 }
 
 int exercise167(const vector<int> &array) {
@@ -484,17 +456,6 @@ int exercise167(const vector<int> &array) {
     return m;
 }
 
-bool is_power_of_5(int i) {
-    while (i != 0) {
-        if (i % 5 != 0) {
-            return false;
-        }
-        i = i / 5;
-    }
-    return true;
-}
-
-
 int exercise168(const vector<int> &array) {
     int m = 0;
     for (int i : array) {
@@ -507,7 +468,6 @@ int exercise168(const vector<int> &array) {
     return m;
 }
 
-
 int exercise169(const vector<int> &array) {
     int min_odd = 1e9;
     for (int i :array) {
@@ -516,25 +476,6 @@ int exercise169(const vector<int> &array) {
         }
     }
     return min_odd - 1;
-}
-
-bool is_prime(int x) {
-    if (x < 2) {
-        return false;
-    }
-    if (x < 8) {
-        if (x == 2 or x == 3 or x == 5 or x == 7) {
-            return true;
-        }
-    } else {
-        for (int i = 8; i < sqrt(x); i++) {
-            if (x % i == 0) {
-                return false;
-            }
-        }
-    }
-
-    return true;
 }
 
 int exercise170(const vector<int> &array) {
@@ -552,16 +493,6 @@ int exercise170(const vector<int> &array) {
         }
     }
     return -1;
-}
-
-int gcd(int a, int b) {
-    int temp = 0;
-    while (a != 0) {
-        temp = a;
-        a = b % a;
-        b = temp;
-    }
-    return b;
 }
 
 int exercise171(const vector<int> &array) {
@@ -646,7 +577,6 @@ vector<float> exercise176(const vector<float> &array) {
     return result;
 }
 
-
 vector<float> exercise177(const vector<float> &array, float x, float y) {
     vector<float> result;
     for (const float item:array) {
@@ -708,7 +638,6 @@ vector<float> exercise182(const vector<float> &array) {
     return result;
 }
 
-
 vector<int> exercise183(const vector<int> &array) {
     vector<int> result;
     int max_value = -1000000000;
@@ -724,7 +653,6 @@ vector<int> exercise183(const vector<int> &array) {
     }
     return result;
 }
-
 
 vector<int> exercise184(const vector<int> &array) {
     vector<int> result;
@@ -748,7 +676,6 @@ vector<int> exercise184(const vector<int> &array) {
     return result;
 }
 
-
 vector<int> exercise185(const vector<int> &array) {
     vector<int> result;
     for (int i = 0; i < array.size(); i++) {
@@ -759,7 +686,6 @@ vector<int> exercise185(const vector<int> &array) {
     }
     return result;
 }
-
 
 vector<int> exercise186(const vector<int> &array) {
     vector<int> result;
@@ -778,7 +704,6 @@ vector<int> exercise186(const vector<int> &array) {
     return result;
 }
 
-
 vector<int> exercise187(const vector<int> &array) {
     vector<int> result;
     int smallest_positive = 100000000;
@@ -794,7 +719,6 @@ vector<int> exercise187(const vector<int> &array) {
     }
     return result;
 }
-
 
 vector<int> exercise188(const vector<int> &array) {
     vector<int> result;
@@ -812,29 +736,6 @@ vector<int> exercise188(const vector<int> &array) {
     return result;
 }
 
-bool first_digit_prime_odd(int number) {
-    bool flag = true;
-    if (number == 2) return false;
-    if (number == 3 || number == 5 || number == 7) return true;
-    for (int i = 3; i < sqrt(number); i++) {
-        if (number % i == 0) {
-            flag = false;
-            break;
-        }
-    }
-    if (flag) {
-        int f_digit = 0;
-        while (number != 0) {
-            f_digit = number % 10;
-            number = number / 10;
-        }
-        if (f_digit % 2 == 0) {
-            flag = false;
-        }
-    }
-
-    return flag;
-}
 
 vector<int> exercise189(const vector<int> &array) {
     vector<int> result;
@@ -874,14 +775,6 @@ vector<float> exercise191(const vector<float> &array) {
     return result;
 }
 
-bool is_first_digit_even(int number) {
-    while (number > 9) {
-        number = number / 10;
-    }
-
-    return number % 2 == 0;
-}
-
 vector<int> exercise192(const vector<int> &array) {
     vector<int> result;
 
@@ -891,17 +784,6 @@ vector<int> exercise192(const vector<int> &array) {
         }
     }
     return result;
-}
-
-bool is_power_of_3(int number) {
-    while (number != 1) {
-        if (number % 3 == 0) {
-            number = number / 3;
-        } else {
-            return false;
-        }
-    }
-    return true;
 }
 
 vector<int> exercise193(const vector<int> &array) {
@@ -914,7 +796,6 @@ vector<int> exercise193(const vector<int> &array) {
     }
     return result;
 }
-
 
 vector<pair<int, int>> exercise194(const vector<int> &array) {
     int min_dist = 1000000000;
@@ -939,7 +820,6 @@ vector<pair<int, int>> exercise194(const vector<int> &array) {
     return result;
 }
 
-
 vector<pair<int, pair<int, int>>> exercise195(const vector<int> &array) {
     vector<pair<int, pair<int, int>>> result;
     for (int i = 0; i < array.size(); i++) {
@@ -959,11 +839,9 @@ vector<pair<int, pair<int, int>>> exercise195(const vector<int> &array) {
     return result;
 }
 
-
 vector<float> exercise196(const vector<float> &array) {
     return exercise176(array);
 }
-
 
 vector<int> exercise197(const vector<int> &array) {
     vector<int> result;
@@ -996,14 +874,6 @@ float exercise201(const vector<float> &array) {
         sum = sum + ((item >= 0) ? item : 0);
     }
     return sum;
-}
-
-int first_digit(int n) {
-    n = abs(n);
-    while (n > 9) {
-        n = n / 10;
-    }
-    return n;
 }
 
 int exercise202(const vector<int> &array) {
@@ -1067,7 +937,6 @@ int exercise208(const vector<int> &array) {
     return sum;
 }
 
-
 int exercise209(const vector<int> &array) {
     int sum = 0;
     for (int i = 0; i < array.size(); i++) {
@@ -1077,16 +946,28 @@ int exercise209(const vector<int> &array) {
     return sum;
 }
 
+int exercise210(const vector<int> &array) {
+    int sum = 0;
+    for (const auto item:array) {
+        if (first_digit(item) % 2 == 0) {
+            sum = sum + item;
+        }
+    }
+    return sum;
+}
 
-float exercise210(const vector<int> &array) {
+float exercise211(const vector<int> &array) {
     int sum = 0;
     int ct = 0;
     for (const auto item:array) {
-        if (is_prime(item)) {
+        if (is_prime(item) % 2 == 0) {
             sum = sum + item;
             ct++;
         }
-
     }
     return sum * 1.0 / ct;
+}
+
+float exercise212(const vector<float> &array){
+
 }

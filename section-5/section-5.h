@@ -8,7 +8,7 @@
 #endif //INTRODUCTION_TO_PROGRAMMING_SECTION_5_H
 
 
-double exercise122(vector<double> array);
+double exercise122(const vector<double> &array);
 
 int exercise123(vector<int> array);
 
@@ -26,11 +26,11 @@ vector<int> exercise132(vector<int> array);
 
 vector<int> exercise133(vector<double> array);
 
-double exercise134(vector<double> array);
+double exercise134(const vector<double> &array);
 
-double exercise135(vector<double> array);
+double exercise135(const vector<double> &array);
 
-double exercise136(vector<double> array);
+double exercise136(const vector<double> &array);
 
 int exercise137(vector<double> array);
 
@@ -42,31 +42,31 @@ double exercise140(vector<double> array);
 
 int exercise141(vector<double> array);
 
-int exercise142(vector<int> array);
+int exercise142(const vector<int> &array);
 
-int exercise143(vector<int> array);
+int exercise143(const vector<int> &array);
 
 int exercise144(vector<int> array);
 
 unsigned long exercise145(vector<long long> array);
 
-double exercise146(vector<double> array);
+double exercise146(const vector<double> &array);
 
 double exercise147(vector<double> array);
 
-int exercise148(vector<int> array);
+int exercise148(const vector<int> &array);
 
-unsigned long exercise149(vector<long long> array);
+unsigned long exercise149(const vector<long long> &array);
 
 double exercise150(vector<double> array);
 
-int exercise151(vector<int> array);
+int exercise151(const vector<int> &array);
 
-int exercise152(vector<long long> array);
+int exercise152(const vector<long long> &array);
 
-int exercise153(vector<int> array);
+int exercise153(const vector<int> &array);
 
-int exercise154(vector<double> array);
+int exercise154(const vector<double> &array);
 
 double exercise155(vector<double> array, double x);
 
@@ -163,3 +163,24 @@ vector<int> exercise198(const vector<int> &array);
 vector<int> exercise199(const vector<int> &array);
 
 int exercise200(const vector<int> &array);
+
+
+float exercise201(const vector<float> &array);
+
+int exercise202(const vector<int> &array);
+
+int exercise203(const vector<int> &array);
+
+float exercise204(const vector<float> &array);
+
+float exercise205(const vector<float> &array);
+
+float exercise206(const vector<float> &array);
+
+float exercise207(const vector<float> &array);
+
+int exercise208(const vector<int> &array);
+
+int exercise209(const vector<int> &array);
+
+float exercise210(const vector<int> &array);
