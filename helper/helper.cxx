@@ -124,3 +124,11 @@ int first_digit(int n) {
     }
     return n;
 }
+
+bool is_perfect(int x){
+    int s = 0;
+    for (int i = 1;i < x;i++){
+        s = s + (x%i==0?i:0);
+    }
+    return s==x;
+}

@@ -4,10 +4,10 @@
 
 #include <cmath>
 #include <iostream>
-#include <iomanip>
+#include <unordered_map>
+#include <unordered_set>
 #include <string>
 #include <algorithm>
-#include <cmath>
 #include "../section-1/section-1.h"
 #include "../section-2/section-2.h"
 #include "../helper/helper.h"
@@ -1043,4 +1043,101 @@ int exercise220(const vector<int> &array) {
         ct = ct + (item % 10 == 5 ? 1 : 0);
     }
     return ct;
+}
+
+int exercise221(const vector<int> &array) {
+    int rel = 0;
+    for (const auto item:array) {
+        rel = rel + (item % 2 == 0 ? 1 : -1);
+    }
+    return (rel > 0) ? -1 : (rel < 0) ? 1 : 0;
+}
+
+
+float exercise222(const vector<float> &array) {
+    float ct = 0;
+    for (int i = 1; i < array.size() - 1; i++) {
+        ct = ct + (((array[i] > array[i - 1] && array[i] > array[i + 1]) or
+                    (array[i] < array[i - 1] && array[i] < array[i + 1])) ? 1 : 0);
+    }
+    return ct;
+}
+
+
+int exercise223(const vector<int> &array) {
+    int ct = 0;
+    for (const auto item:array) {
+        ct = ct + (is_prime(item) ? 1 : 0);
+    }
+    return ct;
+}
+
+int exercise224(const vector<int> &array) {
+    float ct = 0;
+    for (const auto item:array) {
+        ct = ct + (is_perfect(item) ? 1 : 0);
+    }
+    return ct;
+}
+
+int exercise225(const vector<float> &array) {
+    int ct = 0;
+    float max_val = -100000000;
+    for (const auto item :array) {
+        if (item > max_val) {
+            max_val = item;
+            ct = 0;
+        } else if (item == max_val) {
+            ct++;
+        }
+    }
+    return ct;
+}
+
+
+int exercise226(const vector<int> &array) {
+    int ct = 0;
+    for (int i = 0; i < array.size() - 1; i++) {
+        ct = ct + ((array[i] % 2 == 0 && array[i + 1] % 2 == 0) ? 1 : 0);
+    }
+    return ct;
+}
+
+
+int exercise227(const vector<int> &array) {
+    int ct = 0;
+    for (int i = 0; i < array.size() - 1; i++) {
+        ct = ct + ((array[i] * array[i + 1] < 0) ? 1 : 0);
+    }
+    return ct;
+}
+
+
+int exercise228(const vector<int> &array) {
+    int ct = 0;
+    for (int i = 0; i < array.size() - 1; i++) {
+        ct = ct + ((array[i] * array[i + 1] > 0 and abs(array[i + 1]) > abs(array[i])) ? 1 : 0);
+    }
+    return ct;
+}
+
+vector<int> exercise229(const vector<int> &array) {
+    unordered_set<int> s(array.begin(), array.end());
+    vector<int> t(s.begin(), s.end());
+    return t;
+}
+
+
+unordered_map<int, int> exercise230(const vector<int> &array) {
+    unordered_map<int, int> counter;
+    int *t = nullptr;
+    for (const int item:array) {
+        if (counter.count(item) == 0) {
+            counter[item] = 1;
+
+        } else {
+            counter[item] = counter[1] + 1;
+        }
+    }
+    return counter;
 }

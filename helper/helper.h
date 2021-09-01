@@ -25,4 +25,6 @@ bool first_digit_prime_odd(int number);
 bool is_first_digit_even(int number);
 
 int first_digit(int n) ;
+
+bool is_perfect(int x);
 #endif //INTRODUCTION_TO_PROGRAMMING_HELPER_H
