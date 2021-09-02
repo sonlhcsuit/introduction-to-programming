@@ -184,3 +184,24 @@ int exercise208(const vector<int> &array);
 int exercise209(const vector<int> &array);
 
 float exercise210(const vector<int> &array);
+
+
+float exercise211(const vector<int> &array);
+
+double exercise212(const vector<float> &array);
+
+double exercise213(const vector<float> &array, float x);
+
+double exercise214(const vector<float> &array);
+
+double exercise215(const vector<float> &array);
+
+int exercise216(const vector<int> &array);
+
+int exercise217(const vector<int> &array);
+
+int exercise218(const vector<int> &array);
+
+int exercise219(const vector<float> &array, float x);
+
+int exercise220(const vector<int> &array);

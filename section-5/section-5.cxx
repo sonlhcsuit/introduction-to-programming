@@ -1177,12 +1177,59 @@ int exercise234(const vector<float> &a, const vector<float> &b) {
     return t.size();
 }
 
-vector<float> exercise236(const vector<float> &a, const vector<float> &b) {
+vector<float> exercise235(const vector<float> &a, const vector<float> &b) {
     vector<float> t;
-
     vector<float>::iterator it;
     it = set_difference(a.begin(), a.end(), b.begin(), b.end(), t.begin());
     t.resize(it-t.begin());
     return t;
+}
+
+int exercise236(const vector<int> &array){
+    unordered_map<int,int> t_map = exercise230(array);
+    int m_v = -110000000;
+    int m_i = 0;
+    for(const auto &[key,value]:t_map){
+        if(value>m_v){
+            m_i=key;
+        }
+    }
+    return m_i;
+}
+
+vector<int> exercise238(const vector<int> &array){
+    unordered_map<int,int> t_map = exercise230(array);
+    int m_v = -10000000;
+    vector<int> result;
+    for(const auto &[key,value]:t_map){
+        if(value>m_v){
+            result.clear();
+            result.push_back(key);
+        } else if ( value == m_v){
+            result.push_back(key);
+        }
+    }
+    return result;
+}
+
+vector<int> exercise239(const vector<int> &array){
+    vector<int> primes;
+    for(const auto item:array){
+        if (is_prime(item)){
+            primes.push_back(item);
+        }
+    }
+    unordered_set<int> set_primes(primes.begin(),primes.end());
+    vector<int> s(set_primes.begin(),set_primes.end());
+    return s;
+}
+
+bool exercise240(const vector<int> &array){
+    for(const auto item:array){
+        if(item==0){
+            return true;
+        }
+    }
+    return false;
 }
 
