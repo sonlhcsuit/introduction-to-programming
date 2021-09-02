@@ -1141,3 +1141,48 @@ unordered_map<int, int> exercise230(const vector<int> &array) {
     }
     return counter;
 }
+
+vector<int> exercise231(const vector<int> &array) {
+    unordered_map<int, int> t = exercise230(array);
+    vector<int> temp;
+    for (const auto &[key, value]: t) {
+        if (value == 1) {
+            temp.push_back(key);
+        }
+    }
+    return temp;
+}
+
+vector<int> exercise232(const vector<int> array) {
+    unordered_map<int, int> t = exercise230(array);
+    vector<int> temp;
+    for (const auto &[key, value]: t) {
+        if (value > 1) {
+            temp.push_back(key);
+        }
+    }
+    return temp;
+
+}
+
+unordered_map<int, int> exercise233(const vector<int> &array) {
+    return exercise230(array);
+}
+
+int exercise234(const vector<float> &a, const vector<float> &b) {
+    vector<float> t;
+    vector<float>::iterator it;
+    it = set_difference(a.begin(), a.end(), b.begin(), b.end(), t.begin());
+    t.resize(it-t.begin());
+    return t.size();
+}
+
+vector<float> exercise236(const vector<float> &a, const vector<float> &b) {
+    vector<float> t;
+
+    vector<float>::iterator it;
+    it = set_difference(a.begin(), a.end(), b.begin(), b.end(), t.begin());
+    t.resize(it-t.begin());
+    return t;
+}
+
