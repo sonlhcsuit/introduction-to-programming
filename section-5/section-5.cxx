@@ -1270,12 +1270,50 @@ bool exercise225(const vector<int> &array) {
   return true;
 }
 
-bool exercise246(const vector<int> &array){
-	for(const auto item:array){
-		if (!is_palindrome(item)){
-			return false;
-		}
-	}
-	return true;
+bool exercise246(const vector<int> &array) {
+  for (const auto item : array) {
+    if (!is_palindrome(item)) {
+      return false;
+    }
+  }
+  return true;
+}
 
+bool exercise247(const vector<int> &array) {
+  for (int i = 0; i < array.size() - 1; i++) {
+    if ((array[i] + array[i + 1]) % 2 == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool exercise248(const vector<int> &array) {
+  for (int i = 0; i < array.size() - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool exercise249(const vector<int> &array) {
+  for (int i = 0; i < array.size() - 1; i++) {
+    if (array[i] <= array[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int exercise250(const vector<int> &array) {
+  int d = array[1] - array[0];
+
+  for (int i = 0; i < array.size() - 1; i++) {
+    if (array[i + 1] - array[i] != d) {
+      return 0;
+    }
+  }
+
+  return d;
 }
