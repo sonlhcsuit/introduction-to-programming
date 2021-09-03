@@ -9,7 +9,7 @@
 
 #include "unordered_set"
 #include "unordered_map"
-
+using namespace std;
 double exercise122(const vector<double> &array);
 
 int exercise123(vector<int> array);
