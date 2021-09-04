@@ -1361,7 +1361,7 @@ int exercise254(const vector<int> &array) {
   return ct;
 }
 
-vector<int>  exercise255(vector<int> array) {
+vector<int> exercise255(vector<int> array) {
   // using selection sort for easy?
   // quicksort is better
   for (int i = 0; i < array.size(); i++) {
@@ -1373,9 +1373,121 @@ vector<int>  exercise255(vector<int> array) {
     }
     // swap
     int t1 = array[mi];
-	int t2 = array[i];
+    int t2 = array[i];
     array[mi] = t2;
     array[i] = t1;
   }
   return array;
+}
+
+vector<int> exercise256(vector<int> array) {
+
+  // using selection sort for easy?
+  // quicksort is better
+  for (int i = 0; i < array.size(); i++) {
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[j] < array[mi]) {
+        mi = j;
+      }
+    }
+    // swap
+    int t1 = array[mi];
+    int t2 = array[i];
+    array[mi] = t2;
+    array[i] = t1;
+  }
+  return array;
+}
+
+vector<int> exercise257(vector<int> array) {
+
+  // using selection sort for easy?
+  // quicksort is better
+  for (int i = 1; i < array.size(); i = i + 2) {
+    int mi = i;
+    for (int j = i; j < array.size(); j = j + 2) {
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    // swap
+    int t1 = array[mi];
+    int t2 = array[i];
+    array[mi] = t2;
+    array[i] = t1;
+  }
+  return array;
+}
+
+vector<int> exercise258(vector<int> array) {
+
+  for (int i = 0; i < array.size(); i++) {
+    if (!is_prime(array[i])) {
+      continue;
+    }
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (!is_prime(array[j])) {
+        continue;
+      }
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+
+  return array;
+}
+
+vector<int> exercise259(vector<int> array) {
+
+  for (int i = 0; i < array.size(); i++) {
+    if (!is_perfect(array[i])) {
+      continue;
+    }
+
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (!is_perfect(array[j])) {
+        continue;
+      }
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    if (mi != i) {
+      // swap
+
+      int t1 = array[mi];
+      int t2 = array[i];
+      array[mi] = t2;
+      array[i] = t1;
+    }
+  }
+
+  return array;
+}
+
+bool exercise260(vector<int> a, vector<int> b) {
+  if (a.size() != b.size()) {
+    return false;
+  }
+  sort(a.begin(), a.end());
+  sort(b.begin(), b.end());
+
+  for (int i = 0; i < a.size(); i++) {
+    if (a[i] != b[i])
+      return false;
+  }
+  return true;
 }
