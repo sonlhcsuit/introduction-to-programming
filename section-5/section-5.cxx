@@ -1317,3 +1317,65 @@ int exercise250(const vector<int> &array) {
 
   return d;
 }
+
+int exercise251(const vector<int> &array) {
+  int value = array[0];
+  for (const auto item : array) {
+    if (item != value) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+bool exercise252(const vector<float> &array) {
+  for (int i = 1; i < array.size(); i++) {
+    if (!((array[i] > array[i - 1] && array[i] > array[i + 1]) ||
+          (array[i] < array[i - 1] && array[i] < array[i + 1]))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool exercise253(const vector<int> &a, vector<int> &b) {
+  for (const auto item : a) {
+    if (count(b.begin(), b.end(), item) == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int exercise254(const vector<int> &array) {
+  int ct = 0;
+  int current_max = array[0];
+  for (const auto item : array) {
+    if (item > current_max) {
+      current_max = item;
+      ct++;
+    }
+  }
+
+  return ct;
+}
+
+vector<int>  exercise255(vector<int> array) {
+  // using selection sort for easy?
+  // quicksort is better
+  for (int i = 0; i < array.size(); i++) {
+    int mi = i;
+    for (int j = i; j < array.size(); j++) {
+      if (array[j] > array[mi]) {
+        mi = j;
+      }
+    }
+    // swap
+    int t1 = array[mi];
+	int t2 = array[i];
+    array[mi] = t2;
+    array[i] = t1;
+  }
+  return array;
+}
