@@ -1645,16 +1645,15 @@ vector<float> exercise264(vector<float> a, vector<float> b) {
   return result;
 }
 
-
 vector<float> exercise265(vector<float> a, vector<float> b) {
   vector<float> result;
-  int i = a.size() -1;
-  int j = b.size() -1 ;
-  while ( i != 0 || j!=0) {
-    if (i == 0  && j > 0) {
+  int i = a.size() - 1;
+  int j = b.size() - 1;
+  while (i != 0 || j != 0) {
+    if (i == 0 && j > 0) {
       result.push_back(b[j]);
       j--;
-    } else if (j == 0 && i >0) {
+    } else if (j == 0 && i > 0) {
       result.push_back(a[i]);
       i--;
     } else {
@@ -1669,3 +1668,36 @@ vector<float> exercise265(vector<float> a, vector<float> b) {
   }
   return result;
 }
+
+vector<float> exercise266(vector<float> array, float value, int k) {
+  vector<float>::iterator it = array.begin();
+  array.insert(it + k, value);
+  return array;
+}
+
+// exercise267 : skip - using insertion sort with binary search
+// exercise268 : dont get the ideal of instructions
+// using binary search with insertion
+vector<float> exercise269(vector<float> array, float value) {
+  int l = 0;
+  int h = array.size() - 1;
+  int m = -1;
+  int k = -1;
+
+  while (l < h) {
+    m = (h + l) / 2;
+    if (array[m] == value) {
+      k = m;
+      break;
+    } else if (array[m] > value) {
+		h = m -1;
+    } else if (array[m] < value) {
+    	l = m +1;
+	}
+  }
+  if ( k == -1 ) 
+	  k = l;
+
+  return exercise266(array,value,k);
+}
+// exercise270 : like 267 or sort after finish input

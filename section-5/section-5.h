@@ -5,10 +5,10 @@
 #ifndef INTRODUCTION_TO_PROGRAMMING_SECTION_5_H
 #define INTRODUCTION_TO_PROGRAMMING_SECTION_5_H
 
-#endif //INTRODUCTION_TO_PROGRAMMING_SECTION_5_H
+#endif // INTRODUCTION_TO_PROGRAMMING_SECTION_5_H
 
-#include "unordered_set"
 #include "unordered_map"
+#include "unordered_set"
 using namespace std;
 double exercise122(const vector<double> &array);
 
@@ -124,11 +124,9 @@ vector<float> exercise179(const vector<float> &array);
 
 vector<float> exercise180(const vector<float> &array);
 
-
 vector<int> exercise181(const vector<int> &array);
 
 vector<float> exercise182(const vector<float> &array);
-
 
 vector<int> exercise183(const vector<int> &array);
 
@@ -166,7 +164,6 @@ vector<int> exercise199(const vector<int> &array);
 
 int exercise200(const vector<int> &array);
 
-
 float exercise201(const vector<float> &array);
 
 int exercise202(const vector<int> &array);
@@ -186,7 +183,6 @@ int exercise208(const vector<int> &array);
 int exercise209(const vector<int> &array);
 
 float exercise210(const vector<int> &array);
-
 
 float exercise211(const vector<int> &array);
 
@@ -208,27 +204,34 @@ int exercise219(const vector<float> &array, float x);
 
 int exercise220(const vector<int> &array);
 
-
-int exercise221(const vector<int> &array) ;
+int exercise221(const vector<int> &array);
 float exercise222(const vector<float> &array);
 
-int exercise223(const vector<int> &array) ;
-int exercise224(const vector<int> &array) ;
+int exercise223(const vector<int> &array);
+int exercise224(const vector<int> &array);
 int exercise225(const vector<float> &array);
 
-int exercise226(const vector<int> &array) ;
-int exercise227(const vector<int> &array) ;
-int exercise228(const vector<int> &array) ;
+int exercise226(const vector<int> &array);
+int exercise227(const vector<int> &array);
+int exercise228(const vector<int> &array);
 
-vector<int> exercise229(const vector<int> &array) ;
+vector<int> exercise229(const vector<int> &array);
 unordered_map<int, int> exercise230(const vector<int> &array);
-vector<int> exercise231(const vector<int> &array) ;
+vector<int> exercise231(const vector<int> &array);
 
-vector<int> exercise232(const vector<int> array) ;
-unordered_map<int, int> exercise233(const vector<int> &array) ;
-int exercise234(const vector<float> &a, const vector<float> &b) ;
-vector<float> exercise235(const vector<float> &a, const vector<float> &b) ;
+vector<int> exercise232(const vector<int> array);
+unordered_map<int, int> exercise233(const vector<int> &array);
+int exercise234(const vector<float> &a, const vector<float> &b);
+vector<float> exercise235(const vector<float> &a, const vector<float> &b);
 int exercise236(const vector<int> &array);
 vector<int> exercise238(const vector<int> &array);
 vector<int> exercise239(const vector<int> &array);
 bool exercise240(const vector<int> &array);
+
+vector<float> exercise261(vector<float> array);
+vector<int> exercise262(vector<int> array);
+vector<int> exercise263(vector<int> array);
+vector<float> exercise264(vector<float> a, vector<float> b);
+vector<float> exercise265(vector<float> a, vector<float> b);
+vector<float> exercise266(vector<float> array, float value, int k);
+vector<float> exercise269(vector<float> array, float value);

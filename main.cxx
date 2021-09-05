@@ -15,6 +15,7 @@ int main(int argc, char **argv) {
   vector<int> y = {3, 9, 27, 81, 90, 100, 0};
 
   quicksort(v, 0, v.size() - 1);
+  v = exercise269(v,321);
   for (const auto item : v) {
     cout << item << " ";
   }
