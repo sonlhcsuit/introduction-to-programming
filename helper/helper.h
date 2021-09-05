@@ -5,7 +5,11 @@
 #ifndef INTRODUCTION_TO_PROGRAMMING_HELPER_H
 #define INTRODUCTION_TO_PROGRAMMING_HELPER_H
 
+#endif //INTRODUCTION_TO_PROGRAMMING_HELPER_H
 
+#include <vector>
+
+using namespace std;
 bool is_palindrome(int x);
 
 bool is_power_of_2(int i);
@@ -27,4 +31,5 @@ bool is_first_digit_even(int number);
 int first_digit(int n) ;
 
 bool is_perfect(int x);
-#endif //INTRODUCTION_TO_PROGRAMMING_HELPER_H
+
+void quicksort(vector<float> &array,int low,int high);
