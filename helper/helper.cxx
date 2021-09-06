@@ -151,12 +151,10 @@ void quicksort(vector<float> &array, int low, int high) {
       // swap
 
       small = small + 1;
-      cout << array[small] << " " << array[i] << "\n";
       temp = array[small];
       array[small] = array[i];
       array[i] = temp;
 
-      cout << array[small] << " " << array[i] << "\n";
     }
   }
 
@@ -164,9 +162,7 @@ void quicksort(vector<float> &array, int low, int high) {
   temp = array[small];
   array[small] = array[high];
   array[high] = temp;
-  cout << "wtf\n";
 
-  cout << array[small] << " " << array[high] << "\n";
   quicksort(array, low, small - 1);
   quicksort(array, small + 1, high);
 }

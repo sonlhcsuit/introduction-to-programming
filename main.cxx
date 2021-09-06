@@ -11,11 +11,17 @@ using namespace std;
 int main(int argc, char **argv) {
   cout << "Hello World\n";
 
-  vector<float> v = {4444.0, 2.0, 8.0};
+  vector<float> v = {4444,4444,4444.0, 2.0, 8.0};
   vector<int> y = {3, 9, 27, 81, 90, 100, 0};
 
   quicksort(v, 0, v.size() - 1);
+
+  for (const auto item : v) {
+    cout << item << " ";
+  }
   v = exercise269(v,321);
+
+  exercise272(v);
   for (const auto item : v) {
     cout << item << " ";
   }

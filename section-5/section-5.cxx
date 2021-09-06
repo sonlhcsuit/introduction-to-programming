@@ -1690,14 +1690,72 @@ vector<float> exercise269(vector<float> array, float value) {
       k = m;
       break;
     } else if (array[m] > value) {
-		h = m -1;
+      h = m - 1;
     } else if (array[m] < value) {
-    	l = m +1;
-	}
+      l = m + 1;
+    }
   }
-  if ( k == -1 ) 
-	  k = l;
+  if (k == -1)
+    k = l;
 
-  return exercise266(array,value,k);
+  return exercise266(array, value, k);
 }
 // exercise270 : like 267 or sort after finish input
+void exercise271(vector<float> &array, int k) {
+  array.erase(array.begin() + k);
+}
+
+void exercise272(vector<float> &array) {
+  float max_value = -10000000000;
+  vector<int> max_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] > max_value) {
+      max_value = array[i];
+      max_index.clear();
+    } else if (abs(array[i] - max_value) < 1e-9) {
+      max_index.push_back(i);
+    }
+  }
+
+  for (int i = 0; i < max_index.size(); i++) {
+    array.erase(array.begin() + (max_index[i] - i));
+  }
+}
+
+void exercise273(vector<float> &array) {
+  vector<float> negative_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] > 0) {
+      negative_index.push_back(i);
+    }
+  }
+  for (int i = 0; i < negative_index.size(); i++) {
+    array.erase(array.begin() + (negative_index[i] - i));
+  }
+}
+
+
+void exercise274(vector<int> &array) {
+  vector<float> negative_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i]%2 == 0) {
+      negative_index.push_back(i);
+    }
+  }
+  for (int i = 0; i < negative_index.size(); i++) {
+    array.erase(array.begin() + (negative_index[i] - i));
+  }
+}
+
+
+void exercise275(vector<int> &array) {
+  vector<float> negative_index;
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] > 0) {
+      negative_index.push_back(i);
+    }
+  }
+  for (int i = 0; i < negative_index.size(); i++) {
+    array.erase(array.begin() + (negative_index[i] - i));
+  }
+}

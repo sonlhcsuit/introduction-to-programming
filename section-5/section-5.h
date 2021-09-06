@@ -235,3 +235,6 @@ vector<float> exercise264(vector<float> a, vector<float> b);
 vector<float> exercise265(vector<float> a, vector<float> b);
 vector<float> exercise266(vector<float> array, float value, int k);
 vector<float> exercise269(vector<float> array, float value);
+void exercise271(vector<float> &array, int k);
+
+void exercise272(vector<float> &array);
