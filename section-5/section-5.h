@@ -208,33 +208,112 @@ int exercise221(const vector<int> &array);
 float exercise222(const vector<float> &array);
 
 int exercise223(const vector<int> &array);
+
 int exercise224(const vector<int> &array);
+
 int exercise225(const vector<float> &array);
 
 int exercise226(const vector<int> &array);
+
 int exercise227(const vector<int> &array);
+
 int exercise228(const vector<int> &array);
 
 vector<int> exercise229(const vector<int> &array);
+
 unordered_map<int, int> exercise230(const vector<int> &array);
+
 vector<int> exercise231(const vector<int> &array);
 
 vector<int> exercise232(const vector<int> array);
+
 unordered_map<int, int> exercise233(const vector<int> &array);
+
 int exercise234(const vector<float> &a, const vector<float> &b);
+
 vector<float> exercise235(const vector<float> &a, const vector<float> &b);
+
 int exercise236(const vector<int> &array);
+
 vector<int> exercise238(const vector<int> &array);
+
 vector<int> exercise239(const vector<int> &array);
+
 bool exercise240(const vector<int> &array);
 
+bool exercise241(const vector<int> &array);
+
+bool exercise242(const vector<int> &array);
+
+bool exercise243(const vector<int> &array);
+
+bool exercise244(const vector<int> &array);
+
+bool exercise225(const vector<int> &array);
+
+bool exercise246(const vector<int> &array);
+
+bool exercise247(const vector<int> &array);
+
+bool exercise248(const vector<int> &array);
+
+bool exercise249(const vector<int> &array);
+
+int exercise250(const vector<int> &array);
+
+int exercise251(const vector<int> &array);
+
+bool exercise252(const vector<float> &array);
+
+bool exercise253(const vector<int> &a, vector<int> &b);
+
+int exercise254(const vector<int> &array);
+
+vector<int> exercise255(vector<int> array);
+
+vector<int> exercise256(vector<int> array);
+
+vector<int> exercise257(vector<int> array);
+
+vector<int> exercise258(vector<int> array);
+
+vector<int> exercise259(vector<int> array);
+
+bool exercise260(vector<int> a, vector<int> b);
+
 vector<float> exercise261(vector<float> array);
+
 vector<int> exercise262(vector<int> array);
+
 vector<int> exercise263(vector<int> array);
+
 vector<float> exercise264(vector<float> a, vector<float> b);
+
 vector<float> exercise265(vector<float> a, vector<float> b);
+
 vector<float> exercise266(vector<float> array, float value, int k);
+
+// exercise267 : skip - using insertion sort with binary search
+// exercise268 : dont get the ideal of instructions
+// using binary search with insertion
+
 vector<float> exercise269(vector<float> array, float value);
+// exercise270 : like 267 or sort after finish input
+
 void exercise271(vector<float> &array, int k);
 
 void exercise272(vector<float> &array);
+
+void exercise273(vector<float> &array);
+
+void exercise274(vector<int> &array);
+
+void exercise275(vector<int> &array);
+
+void exercise276(vector<float> &array, float x);
+
+void exercise277(vector<int> &array);
+
+vector<float> exercise278(vector<float> &array);
+// 279 similar to 278
+vector<float> exercise280(const vector<float> &array);
