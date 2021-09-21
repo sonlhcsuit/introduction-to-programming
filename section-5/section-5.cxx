@@ -11,7 +11,6 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
-
 double exercise122(const vector<double> &array) {
   double max_value = -1000000000;
   for (const auto item : array) {
@@ -1734,11 +1733,10 @@ void exercise273(vector<float> &array) {
   }
 }
 
-
 void exercise274(vector<int> &array) {
   vector<int> negative_index;
   for (int i = 0; i < array.size(); i++) {
-    if (array[i]%2 == 0) {
+    if (array[i] % 2 == 0) {
       negative_index.push_back(i);
     }
   }
@@ -1746,7 +1744,6 @@ void exercise274(vector<int> &array) {
     array.erase(array.begin() + (negative_index[i] - i));
   }
 }
-
 
 void exercise275(vector<int> &array) {
   vector<int> negative_index;
@@ -1760,10 +1757,10 @@ void exercise275(vector<int> &array) {
   }
 }
 
-void exercise276(vector<float> &array,float x) {
+void exercise276(vector<float> &array, float x) {
   vector<int> negative_index;
   for (int i = 0; i < array.size(); i++) {
-    if (abs(array[i]-x)<1e-9) {
+    if (abs(array[i] - x) < 1e-9) {
       negative_index.push_back(i);
     }
   }
@@ -1784,24 +1781,170 @@ void exercise277(vector<int> &array) {
   }
 }
 
-
 vector<float> exercise278(vector<float> &array) {
-	unordered_set<float> s(array.begin(),array.end());
-	vector<float>result(s.begin(),s.end());
-	return result;
+  unordered_set<float> s(array.begin(), array.end());
+  vector<float> result(s.begin(), s.end());
+  return result;
 }
 
 // 279 similar to 278
 
-vector<float> exercise280(const vector<float> &array){
-	vector<float> result;
-	for (const auto item: array){
-		if (item == 1)
-			result.push_back(1);
-	}
-	for (const auto item: array){
-		if (item != 1)
-			result.push_back(item);
-	}
-	return result;
+vector<float> exercise280(const vector<float> &array) {
+  vector<float> result;
+  for (const auto item : array) {
+    if (item == 1)
+      result.push_back(1);
+  }
+  for (const auto item : array) {
+    if (item != 1)
+      result.push_back(item);
+  }
+  return result;
+}
+
+vector<int> exercise281(const vector<int> &array) {
+  vector<int> result;
+  for (const auto item : array) {
+    if (item % 2 == 0) {
+      result.push_back(item);
+    }
+  }
+  for (const auto item : array) {
+    if (item == 0) {
+      result.push_back(0);
+    }
+  }
+  for (const auto item : array) {
+    if (item % 2 == 1) {
+      result.push_back(item);
+    }
+  }
+  return result;
+}
+
+vector<int> exercise282(const vector<int> &array) {
+  vector<int> result(array.begin(), array.end());
+  int index = 0;
+  int temp = 0;
+  for (int i = 0; i < result.size(); i++) {
+
+    if (result[i] % 3 == 0) {
+      temp = result[index];
+      result[index] = result[i];
+      result[i] = temp;
+      index++;
+    }
+  }
+  return result;
+}
+
+vector<int> exercise283(const vector<int> &array) {
+
+  vector<int> result(array.begin(), array.end());
+  reverse(result.begin(), result.end());
+  return result;
+}
+
+vector<int> exercise284(const vector<int> &array) {
+  vector<int> result(array.begin(), array.end());
+
+  vector<int> index_of;
+  int temp = 0;
+  for (int i = 0; i < result.size(); i++) {
+    if (result[i] % 2 == 0) {
+      index_of.push_back(i);
+    }
+  }
+
+  int last = index_of.size() - 1;
+  int first = 0;
+  while (first != last && first != last - 1) {
+    temp = result[index_of[first]];
+    result[index_of[first]] = result[index_of[last]];
+    result[index_of[last]] = temp;
+    last--;
+    first++;
+  }
+  return result;
+}
+
+vector<int> exercise285(const vector<int> &array) {
+  vector<int> result(array.begin(), array.end());
+
+  vector<int> index_of;
+  int temp = 0;
+  for (int i = 0; i < result.size(); i++) {
+    if (result[i] > 0) {
+      index_of.push_back(i);
+    }
+  }
+  int last = index_of.size() - 1;
+  int first = 0;
+  while (first != last && first != last - 1) {
+    temp = result[index_of[first]];
+    result[index_of[first]] = result[index_of[last]];
+    result[index_of[last]] = temp;
+    last--;
+    first++;
+  }
+  return result;
+}
+
+vector<int> exercise286(const vector<int> &array) {
+  vector<int> result;
+  for (int i = 1; i < array.size(); i++) {
+    result.push_back(array[i]);
+  }
+  result.push_back(array[0]);
+  return result;
+}
+
+vector<int> exercise287(const vector<int> &array, int k) {
+  vector<int> result;
+  int size = array.size() - 1;
+  for (int i = 0; i < k; i++) {
+    result.push_back(size - k + i);
+  }
+  for (int i = 0; i < array.size() - k; i++) {
+    result.push_back(array[i]);
+  }
+  return result;
+}
+
+// 288 & 289 are so easy
+
+vector<int> exercise290(const vector<int> &array) {
+
+  vector<int> result(array.begin(), array.end());
+
+  vector<int> index_of_even;
+  vector<int> index_of_odd;
+  int temp = 0;
+  for (int i = 0; i < result.size(); i++) {
+    if (result[i] % 2 == 0) {
+      index_of_even.push_back(i);
+    } else {
+      index_of_odd.push_back(i);
+    }
+  }
+
+  int last = index_of_even.size() - 1;
+  int first = 0;
+  while (first != last && first != last - 1) {
+    temp = result[index_of_even[first]];
+    result[index_of_even[first]] = result[index_of_even[last]];
+    result[index_of_even[last]] = temp;
+    last--;
+    first++;
+  }
+  last = index_of_even.size() - 1;
+  first = 0;
+  while (first != last && first != last - 1) {
+    temp = result[index_of_odd[first]];
+    result[index_of_odd[first]] = result[index_of_odd[last]];
+    result[index_of_odd[last]] = temp;
+    last--;
+    first++;
+  }
+  return result;
 }
