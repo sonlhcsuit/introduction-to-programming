@@ -1911,7 +1911,7 @@ vector<int> exercise287(const vector<int> &array, int k) {
   return result;
 }
 
-// 288 & 289 are so easy
+// 288 & 289 are so easy, keyword for colorized output is ANSI escape character
 
 vector<int> exercise290(const vector<int> &array) {
 
@@ -1948,3 +1948,32 @@ vector<int> exercise290(const vector<int> &array) {
   }
   return result;
 }
+vector<float> exercise291(const vector<float> &array) {
+  float max_value = -1000000000;
+  float min_value = 1000000000.0;
+  for (int i = 0; i < array.size(); i++) {
+    if (array[i] > max_value) {
+      max_value = array[i];
+    } else if (array[i] < min_value) {
+      min_value = array[i];
+    }
+  }
+  vector<float> result(array.begin(), array.end());
+  for (int i = 0; i < result.size(); i++) {
+    if (abs(result[i] - max_value) < 1e-6) {
+      result[i] = min_value;
+    } else if (abs(result[i] - min_value) < 1e-6) {
+      result[i] = max_value;
+    }
+  }
+  return result;
+}
+vector<float> exercise292(const vector<float> &array) {
+  vector<float> result(array.begin(), array.end());
+  for (int i = 0; i < result.size(); i++) {
+    result[i] = (int)result[i];
+  }
+  return result;
+}
+
+// 293 - 310 is complicated because we need to list everything (so annoying), so stop!
